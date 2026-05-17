@@ -1,28 +1,8 @@
-# wrangler.toml
-
-# 项目名称（与 Cloudflare 上显示的 Worker 名称一致）
 name = "mizuki"
+compatibility_date = "2026-05-17" # 更为今日
 
-# 主入口文件：@astrojs/cloudflare 构建后生成的 Worker 文件
-main = "dist/_worker.js"
-
-# 静态资源目录：存放 Astro 构建出的所有客户端文件（CSS、JS、图片等）
 [assets]
 directory = "./dist"
 
-# 兼容性标志：启用 Node.js 兼容性（解决日志中 fs、path、stream 等模块报错）
-compatibility_flags = ["nodejs_compat"]
-
-# （可选）指定 Workers 路由，如果不需要自定义路由可省略
-# routes = [
-#   { pattern = "example.com/*", zone_name = "example.com" }
-# ]
-
-# （可选）环境变量示例（你之前在日志中看到 CONTENT_REPO_URL 未设置）
-# [vars]
-# CONTENT_REPO_URL = "https://github.com/yourname/content-repo.git"
-
-# （可选）KV 命名空间绑定（如果使用 sessions 等功能）
-# [[kv_namespaces]]
-# binding = "SESSION"
-# id = "your-kv-namespace-id"
+[vars]
+NODE_VERSION = "22"
