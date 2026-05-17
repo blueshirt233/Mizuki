@@ -238,7 +238,7 @@ export const siteConfig: SiteConfig = {
 		clarityId: "", // Clarity 项目 ID
 	},
 };
-/*export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
+export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 	src: {
 		desktop: [
 			"/assets/desktop-banner/1.webp",
@@ -261,7 +261,7 @@ export const siteConfig: SiteConfig = {
 	zIndex: -1, // 层级，确保壁纸在背景层
 	opacity: 0.8, // 壁纸透明度
 	blur: 1, // 背景模糊程度
-};*/
+};
 
 export const navBarConfig: NavBarConfig = {
 	links: [
