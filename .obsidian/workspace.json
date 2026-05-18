@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/posts/linux部分脚本.md",
+                "file": "src/content/posts/nfs服务器基本搭建.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "linux部分脚本"
+              "title": "nfs服务器基本搭建"
             }
           }
         ]
@@ -196,13 +196,13 @@
   },
   "active": "abc6d0a8301c000e",
   "lastOpenFiles": [
-    "src/content/posts/zabbix简易搭建.md",
-    "src/content/posts/酒馆搭建.md",
-    "src/content/posts/模板.md",
-    "src/content/posts/linux部分脚本.md",
-    "src/content/posts/nfs服务器基本搭建.md",
     "src/content/posts/nginx超简易使用（端口转发）.md",
     "src/content/posts/video.md",
+    "src/content/posts/zabbix简易搭建.md",
+    "src/content/posts/linux部分脚本.md",
+    "src/content/posts/酒馆搭建.md",
+    "src/content/posts/模板.md",
+    "src/content/posts/nfs服务器基本搭建.md",
     "attachments/backup/35529ebab1ba4c54ab01e2b935da0056.png",
     "attachments/backup/0e70878a83c849409e4e5aba8629c804.png",
     "attachments/backup/4087c115fbb94cbdb015d8a09bc6a8f6.png",

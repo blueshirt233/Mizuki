@@ -34,7 +34,7 @@
   "showSuccessNotification": true,
   "showErrorNotification": true,
   "notificationDuration": 5,
-  "enableLocalBackup": true,
+  "enableLocalBackup": false,
   "backupPath": "attachments/backup",
   "language": "zh"
 }
