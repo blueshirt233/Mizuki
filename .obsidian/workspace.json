@@ -194,8 +194,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "abc6d0a8301c000e",
+  "active": "83a6bd891cc49ae8",
   "lastOpenFiles": [
+    "_tmp_11936_e8c6f84ffa3f4087826a41b1f0158c97",
+    "src/content/spec/about.md~",
     "src/content/posts/nginx超简易使用（端口转发）.md",
     "src/content/posts/video.md",
     "src/content/posts/zabbix简易搭建.md",
