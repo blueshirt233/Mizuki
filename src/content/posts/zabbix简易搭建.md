@@ -1,10 +1,10 @@
 ---
-title: 模板
+title: zabbix简易搭建
 published: 2026-05-16
 pinned: false
-description: 模板文件
+description: zabbix简易搭建
 tags:
-  - 模板
+  - zabbix
 draft: false
 category: 教程
 ---
