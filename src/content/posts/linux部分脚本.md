@@ -163,7 +163,7 @@ main
 ```
 
 备份脚本参考
-![4087c115fbb94cbdb015d8a09bc6a8f6.png](https://tu.2644536256.date/file/1779109951590_4087c115fbb94cbdb015d8a09bc6a8f6.png)
+![4087c115fbb94cbdb015d8a09bc6a8f6.png](https://tu.2644536256.date/file/blog/wengzhang/1779110435217_4087c115fbb94cbdb015d8a09bc6a8f6.png)
 备份脚本参考2
 ```bash
 "beifen.sh" 14L, 360B                                                                                                                                                                                                            7,27         全部
@@ -182,9 +182,9 @@ done
 
 ```
 应用检查脚本
-![0e70878a83c849409e4e5aba8629c804.png](https://tu.2644536256.date/file/1779109969428_0e70878a83c849409e4e5aba8629c804.png)
+![0e70878a83c849409e4e5aba8629c804.png](https://tu.2644536256.date/file/blog/wengzhang/1779110470513_0e70878a83c849409e4e5aba8629c804.png)
 恶意ip监控并邮件通知
-![35529ebab1ba4c54ab01e2b935da0056.png](https://tu.2644536256.date/file/1779109987124_35529ebab1ba4c54ab01e2b935da0056.png)
+![35529ebab1ba4c54ab01e2b935da0056.png](https://tu.2644536256.date/file/blog/wengzhang/1779110488941_35529ebab1ba4c54ab01e2b935da0056.png)
 批量创建用户
 ```bash
 #!/bin/bash
