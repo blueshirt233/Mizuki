@@ -194,8 +194,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "83a6bd891cc49ae8",
+  "active": "bc0623fe1e9d21be",
   "lastOpenFiles": [
+    "public/images/albums/milkygreen/info.json",
+    "public/images/albums/milkygreen",
     "_tmp_11936_e8c6f84ffa3f4087826a41b1f0158c97",
     "src/content/spec/about.md~",
     "src/content/posts/nginx超简易使用（端口转发）.md",
