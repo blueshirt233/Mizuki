@@ -5,7 +5,7 @@ pinned: false
 description: linux系统学习
 tags:
   - linux
-draft: true
+draft: false
 category: 教程
 ---
 # Linux快速入门

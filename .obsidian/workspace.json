@@ -202,8 +202,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,7 +216,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "abc6d0a8301c000e",
+  "active": "83a6bd891cc49ae8",
   "lastOpenFiles": [
     "src/content/posts/linux部分脚本.md",
     "src/content/posts/Linux快速入门（后续慢慢补充）.md",
