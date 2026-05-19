@@ -35,12 +35,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/posts/Linux快速入门（后续慢慢补充）.md",
+                "file": "src/content/posts/模板.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Linux快速入门（后续慢慢补充）"
+              "title": "模板"
             }
           }
         ]
@@ -216,10 +216,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "83a6bd891cc49ae8",
+  "active": "f1fdffc186a8836e",
   "lastOpenFiles": [
-    "src/content/posts/linux部分脚本.md",
     "src/content/posts/Linux快速入门（后续慢慢补充）.md",
+    "src/content/posts/linux部分脚本.md",
     "src/content/posts/zabbix简易搭建.md",
     "src/content/posts/video.md",
     "src/content/posts/nginx超简易使用（端口转发）.md",
