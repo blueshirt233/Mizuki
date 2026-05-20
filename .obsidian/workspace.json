@@ -6,7 +6,6 @@
       {
         "id": "f4ea3c1df1526689",
         "type": "tabs",
-        "dimension": 45.82338902147971,
         "children": [
           {
             "id": "abc6d0a8301c000e",
@@ -20,27 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "Linux快速入门（后续慢慢补充）"
-            }
-          }
-        ]
-      },
-      {
-        "id": "ba7aada9554ac84c",
-        "type": "tabs",
-        "dimension": 54.17661097852029,
-        "children": [
-          {
-            "id": "f1fdffc186a8836e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "src/content/posts/模板.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "模板"
             }
           }
         ]
