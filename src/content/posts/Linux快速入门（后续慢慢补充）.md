@@ -113,3 +113,50 @@ systemctl 【参数】【服务名】
 start、restart、disable、enable、stop
 ### ln软链接
 ln -s 【被链接的文件或文件夹】【目的位置】：-s：创建软链接
+### date命令
+date【-d】【+格式化字符串】：【-d】按照给定的格式化字符串来显示日期，一般用于日期计算
+date -d “+1 day”  ：结果为明天，加一天
+date -d “-1 day”：结果为昨天，减一天
+格式化字符串：
+%Y    年
+%y    年份后两位数字
+%m    月份
+%d     日
+%H    小时
+%M    分钟
+%S    秒
+%s    从1970-01-01 00：00：00 UTC 到现在的秒数
+ntp服务需要下载，dnf install ntp 然后启动服务start和enable
+ntpdate -u 时间服务器网址：手动跟时间服务器校准时间
+修改时区：
+rm -f /etc/localtime 删除本地时间
+sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 用软链接把上海市区重新给本地时区
+### 修改ip和主机名
+hostname 主机名 ： 修改主机名
+vi /etc/NetworkManager/system-connections/网卡名 ：修改ip改为固定ip，其中auto改为manual，ipaddress：x.x.x.x/24/x.x.x.x,dns=x.x.x.x
+### 下载
+wget 【-b】 url：文件下载器 【-b】为后台下载，同时写入日志 
+curl 【-O】url ：发起网络请求，【-O】用于下载
+### 端口
+nmap需要安装，nmap+ip扫描ip下有几个端口暴露
+netstat可能需要安装 dnf install net-tools 
+netstat -anp | gerp 6000：查看本机6000端口占用情况
+### 进程
+ps 【-e -f】：查看系统进程【-e】显示出全部进程【-f】 完全格式化的形式展示信息，一般是ps -ef来用
+kill 【-9】进程ID：关闭进程【-9】为强制关闭
+### 环境变量
+使用evn命令来查看当前环境变量，这个具体再shell中详细描述
+### 解压压缩
+tar 【-c -v- x- f- z- C】解压文件
+-c；创建压缩文件
+-v：显示压缩解压过程
+-x：解压模式
+-f：要创建或解压的文件，这个要在多选中排最后
+-z：gzip模式，不适用就是tarball格式
+-C：解压到哪里，用于解压
+zip 【-r】文件：zip压缩文件【-r】：被压缩的文件包含文件夹的时候使用
+unzip 【-d】 文件：解压zip文件【-d】：指定解压要去的位置
+# linux运维命令
+## 基础运维命令
+### top命令
+![1470684-20180918100416703-87744477.png](https://tu.2644536256.date/file/blog/wengzhang/1779370619947_1470684-20180918100416703-87744477.png)
