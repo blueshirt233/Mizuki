@@ -54,9 +54,9 @@ export const siteConfig: SiteConfig = {
 		// 顶栏标题文本
 		text: "好想喝点奶绿",
 		// 顶栏标题图标路径，默认使用 public/assets/home/home.webp
-		icon: "https://tu.2644536256.date/file/奶绿/1779364544143_14.png",
+		icon: "public/assets/home/14.png",
 		// 网站Logo图片路径
-		logo: "https://tu.2644536256.date/file/奶绿/1779364544143_14.png",
+		logo: "public/assets/home/14.png",
 	},
 
 	// 页面自动缩放配置
