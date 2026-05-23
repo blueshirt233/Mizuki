@@ -1,8 +1,16 @@
 {
+  "editor:insert-codeblock": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Q"
+    }
+  ],
   "editor:set-heading-1": [
     {
       "modifiers": [
-        "Shift"
+        "Alt"
       ],
       "key": "1"
     }
@@ -10,7 +18,7 @@
   "editor:set-heading-2": [
     {
       "modifiers": [
-        "Shift"
+        "Alt"
       ],
       "key": "2"
     }
@@ -18,7 +26,7 @@
   "editor:set-heading-3": [
     {
       "modifiers": [
-        "Shift"
+        "Alt"
       ],
       "key": "3"
     }
@@ -26,7 +34,7 @@
   "editor:set-heading-4": [
     {
       "modifiers": [
-        "Shift"
+        "Alt"
       ],
       "key": "4"
     }

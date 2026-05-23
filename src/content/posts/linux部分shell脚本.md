@@ -1,8 +1,8 @@
 ---
-title: linux部分脚本
+title: linux部分shell脚本
 published: 2026-05-16
 pinned: false
-description: linux部分脚本
+description: linux部分shell脚本
 tags:
   - linux
 draft: false
