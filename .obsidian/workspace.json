@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/posts/zabbix简易搭建.md",
+                "file": "src/content/posts/shell基础运用.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "zabbix简易搭建"
+              "title": "shell基础运用"
             }
           }
         ]
@@ -196,12 +196,13 @@
   },
   "active": "8cb848cc565176c8",
   "lastOpenFiles": [
+    "src/content/posts/shell基础运用1.md",
+    "src/content/posts/shell基础运用.md",
+    "src/content/posts/Linux快速入门及运维基础（后续慢慢补充）.md",
+    "src/content/posts/zabbix简易搭建.md",
     "src/content/posts/linux部分shell脚本.md",
     "src/content/posts/encrypted-post.md",
-    "src/content/posts/shell基础运用.md",
     "src/content/posts/nginx超简易使用（端口转发）.md",
-    "src/content/posts/zabbix简易搭建.md",
-    "src/content/posts/Linux快速入门及运维基础（后续慢慢补充）.md",
     "2026-05-16.md",
     "src/content/posts/模板.md",
     "src/content/posts/video.md",
@@ -233,7 +234,6 @@
     "src/content/posts/markdown-extended.md",
     "src/content/posts/katex-math-example.md",
     "src/content/posts/firefly-layout-system.md",
-    "src/content/posts/firefly.md",
-    "src/content/posts/encrypted-demo.md"
+    "src/content/posts/firefly.md"
   ]
 }
