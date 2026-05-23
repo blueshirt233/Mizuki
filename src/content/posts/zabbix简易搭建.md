@@ -8,7 +8,7 @@ tags:
 draft: false
 category: 教程
 ---
-![428a96a8a917429b86cf0bed477e0220.jpeg](https://tu.2644536256.date/file/文章图片/1778940232605_428a96a8a917429b86cf0bed477e0220.jpeg)
+![428a96a8a917429b86cf0bed477e0220.jpeg](https://tu.2644536256.date/file/blog/wengzhang/1778940232605_428a96a8a917429b86cf0bed477e0220.jpeg)
 
 
 
