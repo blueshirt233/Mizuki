@@ -75,13 +75,29 @@ Shell 脚本（Shell Script）是将多个命令按照顺序写入一个文件�
 > ！
 
 ```bash
-#!/bin/bash   # 单行注释# 这是一个单行注释 # 多行注释（使用 Here 文档技巧）:<<!这是一段多行注释可以写很多行!运行项目并下载源码bash
+#!/bin/bash   
+# 单行注释
+# 这是一个单行注释 
+# 多行注释（使用 Here 文档技巧）
+:<<!
+这是一段多行注释可以写很多行
+!
 ```
 
  如下是一个简单的案例： 
 
 ```bash
-#!/bin/bash#单行注释:<<!多行注释!#输出printfecho "hello shell"#创建文件夹mkdir ./one#创建文件touch ./txt.txt#在txt.txt写入数据echo "hello shell">>./txt.txt 运行项目并下载源码bash
+#!/bin/bash#单行注释
+:<<!
+多行注释
+!
+#输出printf
+echo "hello shell"
+#创建文件夹
+mkdir ./one
+#创建文件touch ./txt.txt
+#在txt.txt写入数据
+echo "hello shell">>./txt.txt 
 ```
 
 ### 4、执行方法：
@@ -99,9 +115,8 @@ Shell 脚本（Shell Script）是将多个命令按照顺序写入一个文件�
 
 区别：sh或bash执行脚本文件方式是直接使用Shell解析器运行脚本文件,不需要可执行权限仅路径方式是执行脚本文件自己,需要可执行权限
 
- ![](https://i-blog.csdnimg.cn/direct/bbe228ea702d40c59988c59c7439f50a.png)
-
-![](https://i-blog.csdnimg.cn/direct/157c83dfbe0c4f0c84f7aabfeaa99f6f.png)
+![bbe228ea702d40c59988c59c7439f50a.png](https://tu.2644536256.date/file/blog/wengzhang/1779544709122_bbe228ea702d40c59988c59c7439f50a.png)
+![157c83dfbe0c4f0c84f7aabfeaa99f6f.png](https://tu.2644536256.date/file/blog/wengzhang/1779544718669_157c83dfbe0c4f0c84f7aabfeaa99f6f.png)
 
 ## `三、echo` 命令的使用
 
@@ -111,7 +126,6 @@ Shell 脚本（Shell Script）是将多个命令按照顺序写入一个文件�
 
 ```less
 echo [选项] [字符串]
-运行项目并下载源码
 ```
 
 **选项**：用于修改 `echo` 命令的行为（如是否输出换行符、是否支持转义字符等）。
@@ -125,15 +139,15 @@ echo [选项] [字符串]
     +   默认情况下，`echo` 会输出换行符，如果你不想要换行符，可以使用 `-n` 选项。
         
     
-    ```php
-    echo -n "Hello, World!"echo "This is on the same line."运行项目并下载源码
+    ```bash
+    echo -n "Hello, World!"
+    echo "This is on the same line."
     ```
     
     输出：
     
-    ```cobol
+    ```bash
     Hello, World!This is on the same line.
-    运行项目并下载源码
     ```
     
 2.  **`-e`**：启用转义字符
@@ -141,14 +155,15 @@ echo [选项] [字符串]
     +   默认情况下，`echo` 不会解析一些特殊的转义字符，如 `\n`、`\t` 等。使用 `-e` 选项后，`echo` 会解析这些转义字符。
         
     
-    ```php
-    echo -e "Hello\nWorld"echo -e "Name\tAge"运行项目并下载源码
+    ```bash
+    echo -e "Hello\nWorld"
+    echo -e "Name\tAge"
     ```
     
     输出：
     
-    ```delphi
-    HelloWorldName    Age运行项目并下载源码
+    ```bash
+    HelloWorldName    Age
     ```
     
 3.  **`-E`**：禁用转义字符
@@ -158,14 +173,12 @@ echo [选项] [字符串]
     
     ```php
     echo -E "Hello\nWorld"
-    运行项目并下载源码
     ```
     
     输出：
     
-    ```undefined
+    ```bash
     Hello\nWorld
-    运行项目并下载源码
     ```
     
 
@@ -174,36 +187,34 @@ echo [选项] [字符串]
 `echo` 很常用于输出变量的值：
 
 ```php
-name="Alice"echo "Hello, $name!"运行项目并下载源码
+name="Alice"
+echo "Hello, $name!"
 ```
 
 输出：
 
-```undefined
+```bash
 Hello, Alice!
-运行项目并下载源码
 ```
 
 你也可以使用大括号来明确变量范围，特别是在变量名后面跟着其他字符时：
 
 ```bash
-name="Alice"echo "Hello, ${name}123!"运行项目并下载源码
+name="Alice"echo "Hello, ${name}123!"
 ```
 
 输出：
 
-```cobol
+```bash
 Hello, Alice123!
-运行项目并下载源码
 ```
 
 ### 4、输出文本到文件
 
 你还可以将 `echo` 的输出重定向到文件中：
 
-```cobol
+```bash
 echo "This is a test." > test.txt
-运行项目并下载源码
 ```
 
 +   使用 `>` 会将内容写入文件并覆盖原有内容。
@@ -211,9 +222,8 @@ echo "This is a test." > test.txt
 +   使用 `>>` 会将内容追加到文件末尾。
     
 
-```php
+```bash
 echo "This is another test." >> test.txt
-运行项目并下载源码
 ```
 
 ### 5、 结合脚本和输入输出
@@ -221,24 +231,44 @@ echo "This is another test." >> test.txt
 在 Shell 脚本中，`echo` 常常用于输出调试信息或者展示用户输入的结果：
 
 ```bash
-#!/bin/bashecho "Please enter your name:"read nameecho "Hello, $name!"运行项目并下载源码
+#!/bin/bash
+echo "Please enter your name:"
+read name
+echo "Hello, $name!"
 ```
 
 运行后，脚本会提示用户输入名字并输出问候语：
 
 ```delphi
-Please enter your name:AliceHello, Alice!运行项目并下载源码
+Please enter your name:
+Alice
+Hello, Alice!
 ```
 
 完整代码： 
 
 ```bash
-#!/bin/bash  echo  echo -n "Hello, World!"echo "This is on the same line."echo  echo -e "Hello\nWorld"echo -e "Name\tAge"echo  echo -E "Hello\nWorld"echoname="Alice"echo "Hello, $name!"echoname="Alice"echo "Hello, ${name}123!"echoecho "This is a test." > test.txtechoecho "Please enter your name:"read nameecho "Hello, $name!"运行项目并下载源码bash
+#!/bin/bash
+echo  
+echo -n "Hello, World!"
+echo "This is on the same line."
+echo  echo -e "Hello\nWorld"
+echo -e "Name\tAge"
+echo  
+echo -E "Hello\nWorld"echoname="Alice"
+echo "Hello, $name!"echoname="Alice"
+echo "Hello, ${name}123!"
+echo
+echo "This is a test." > test.txt
+echo
+echo "Please enter your name:"
+read name
+echo "Hello, $name!"
 ```
 
 运行结果： 
 
-### ![](https://i-blog.csdnimg.cn/direct/c5ba0bdb72c64cc3808044774fcafb42.png)
+![c5ba0bdb72c64cc3808044774fcafb42.png](https://tu.2644536256.date/file/blog/wengzhang/1779544736492_c5ba0bdb72c64cc3808044774fcafb42.png)
 
 ### 6、总结
 
@@ -257,7 +287,7 @@ Shell 中的变量可以分为以下几类：
 
 ### 1、系统环境变量（Environment Variables）
 
-![](https://i-blog.csdnimg.cn/direct/515665904bc74d66b08e6f44963b383d.png)
+![515665904bc74d66b08e6f44963b383d.png](https://tu.2644536256.date/file/blog/wengzhang/1779544818108_515665904bc74d66b08e6f44963b383d.png)
 
 这些变量由系统定义，用于控制 Shell 的运行环境。常见的系统环境变量包括：
 
@@ -272,17 +302,16 @@ Shell 中的变量可以分为以下几类：
 
 示例：
 
-```php
-echo $HOMEecho $USERecho $PATH运行项目并下载源码
+```bash
+echo $HOMEecho $USERecho $PATH
 ```
 
-![](https://i-blog.csdnimg.cn/direct/f29a0818707e4adeab377c820c1288d9.png)
+![f29a0818707e4adeab377c820c1288d9.png](https://tu.2644536256.date/file/blog/wengzhang/1779544985270_f29a0818707e4adeab377c820c1288d9.png)
 
 设置环境变量：
 
 ```bash
 export VAR_NAME=value   # 临时设置
-运行项目并下载源码
 ```
 
 若想永久生效，可写入 `~/.bashrc` 或 `~/.profile` 等配置文件。
@@ -302,15 +331,14 @@ export VAR_NAME=value   # 临时设置
         4.变量的值如果有空格,必须使用双引号括起来  
         5.不能使用Shell的关键字作为变量名称
 
-```cobol
-name="Tom"age=20运行项目并下载源码
+```bash
+name="Tom"age=20
 ```
 
 使用变量：
 
-```php
+```bash
 echo "My name is $name, I am $age years old."
-运行项目并下载源码
 ```
 
 注意事项：
@@ -319,12 +347,15 @@ echo "My name is $name, I am $age years old."
 
 变量名区分大小写。
 
-![](https://i-blog.csdnimg.cn/direct/6b2b41ecc41b40c9b906471647217863.png)
+![6b2b41ecc41b40c9b906471647217863.png](https://tu.2644536256.date/file/blog/wengzhang/1779545026096_6b2b41ecc41b40c9b906471647217863.png)
 
 ###  2、局部变量（函数中）使用 `local` 关键字：
 
 ```bash
-myfunc() {  local temp="hello"  echo $temp}运行项目并下载源码
+myfunc() {  
+local temp="hello"  
+echo $temp
+}
 ```
 
 ### 3、`declare`
@@ -333,9 +364,8 @@ myfunc() {  local temp="hello"  echo $temp}运行项目并下载源码
 
 ###  `declare` 的基本用法
 
-```php
+```bash
 declare [选项] 变量名=值
-运行项目并下载源码
 ```
 
 #### 常用选项
@@ -357,66 +387,71 @@ declare [选项] 变量名=值
 ####  声明只读变量
 
 ```bash
-declare -r pi=3.14pi=3.14159   # 报错：只读变量不能修改运行项目并下载源码bash
+declare -r pi=3.14
+pi=3.14159   # 报错：只读变量不能修改
 ```
 
-#### ![](https://i-blog.csdnimg.cn/direct/745aa0863980496b9b901bb34937860d.png)
+![745aa0863980496b9b901bb34937860d.png](https://tu.2644536256.date/file/blog/wengzhang/1779545068281_745aa0863980496b9b901bb34937860d.png)
 
 #### 声明整数变量并进行计算
 
 ```bash
-declare -i num=5num=num+3echo $num  # 输出：8运行项目并下载源码bash
+declare -i num=5
+num=num+3
+echo $num  # 输出：8
 ```
 
 注意：如果 `num="hello"`，则输出为 `0`，因为字符串不能当作整数。
 
-#### ![](https://i-blog.csdnimg.cn/direct/a5b1f7b9c7304ee0b6a951b853d89736.png)
+![a5b1f7b9c7304ee0b6a951b853d89736.png](https://tu.2644536256.date/file/blog/wengzhang/1779545430714_a5b1f7b9c7304ee0b6a951b853d89736.png)
 
 ####  声明数组变量
 
 ```bash
-declare -a fruits=("apple" "banana" "cherry")echo ${fruits[1]}  # banana运行项目并下载源码bash
+declare -a fruits=("apple" "banana" "cherry")
+echo ${fruits[1]}  # banana
 ```
 
-#### ![](https://i-blog.csdnimg.cn/direct/a293496ae8544a18a199dcd25b9d21ba.png)
+![a293496ae8544a18a199dcd25b9d21ba.png](https://tu.2644536256.date/file/blog/wengzhang/1779545455759_a293496ae8544a18a199dcd25b9d21ba.png)
 
 ####  声明关联数组（Bash 4+）
 
 ```bash
-declare -A infoinfo[name]="Tom"info[age]=22echo ${info[name]}  # Tom运行项目并下载源码
+declare -A info
+info[name]="Tom"
+info[age]=22
+echo ${info[name]}  # Tom
 ```
 
-#### ![](https://i-blog.csdnimg.cn/direct/90ac0d919afd42189931c4903a77f537.png)
+![90ac0d919afd42189931c4903a77f537.png](https://tu.2644536256.date/file/blog/wengzhang/1779545523816_90ac0d919afd42189931c4903a77f537.png)
 
 #### 查看变量声明信息
 
 ```bash
-declare -p fruitsdeclare -p info运行项目并下载源码bash
+declare -p fruits
+declare -p info
 ```
 
-#### ![](https://i-blog.csdnimg.cn/direct/0071d5b0426446588e925acc7d685c7f.png)
+![0071d5b0426446588e925acc7d685c7f.png](https://tu.2644536256.date/file/blog/wengzhang/1779545538614_0071d5b0426446588e925acc7d685c7f.png)
 
 #### 将变量声明为环境变量（类似 `export`）
 
-```sql
+```bash
 declare -x user="Alice"
-运行项目并下载源码
 ```
 
 ###  `declare` 与 `local` 的关系
 
 在函数内部，如果你想限制变量作用域为函数内，使用：
 
-```csharp
+```bash
 local var="inside"
-运行项目并下载源码
 ```
 
 或者结合 `declare`：
 
-```cobol
+```bash
 local -i count=0
-运行项目并下载源码
 ```
 
 ####  小结
@@ -437,15 +472,14 @@ local -i count=0
 
 简单说有点类似与C语言中的“extern”关键字
 
-```typescript
-变量名=值export 变量名运行项目并下载源码
+```bash
+变量名=值export 变量名
 ```
 
 或者直接写成一行：
 
-```typescript
+```bash
 export 变量名=值
-运行项目并下载源码
 ```
 
 ###  示例演示
@@ -453,13 +487,15 @@ export 变量名=值
 #### 不使用 `export`
 
 ```bash
-#!/bin/bashvar1="hello"./child.sh运行项目并下载源码
+#!/bin/bash
+var1="hello"./child.sh
 ```
 
 `child.sh` 内容：
 
 ```bash
-#!/bin/bashecho $var1   # 输出为空运行项目并下载源码
+#!/bin/bash
+echo $var1   # 输出为空
 ```
 
 说明：子脚本 `child.sh` 无法访问父脚本中定义的变量 `var1`。
@@ -467,14 +503,14 @@ export 变量名=值
 #### 使用 `export`
 
 ```bash
-#!/bin/bashexport var1="hello"./child.sh运行项目并下载源码
+#!/bin/bash
+export var1="hello"./child.sh
 ```
 
 现在 `child.sh` 能正确输出：
 
-```undefined
+```bash
 hello
-运行项目并下载源码
 ```
 
 * * *
@@ -488,13 +524,14 @@ hello
 +   查看当前所有环境变量：
     
     ```bash
-    exportenv运行项目并下载源码
+    export
+    env
     ```
     
 
 >  env  #查看系统环境变量
 
-![](https://i-blog.csdnimg.cn/direct/0f2d9c9af28f4abaa375c1cbdda22223.png)
+![0f2d9c9af28f4abaa375c1cbdda22223.png](https://tu.2644536256.date/file/blog/wengzhang/1779545626336_0f2d9c9af28f4abaa375c1cbdda22223.png)
 
 ####  小结
 
@@ -522,12 +559,24 @@ hello
 示例：
 
 ```bash
-echo "n1=$1 n10=${10}"echo "all* :$*"echo "all@ :$@"for n in "$*"do echo $ndone for n in "$@"do  echo $ndone echo "n_num=:"$#运行项目并下载源码bash
+echo "n1=$1 n10=${10}"
+echo "all* :$*"
+echo "all@ :$@"
+for n in "$*"
+do 
+	echo $n
+done 
+for n in "$@"
+do  
+	echo $n
+done 
+
+echo "n_num=:"$#
 ```
 
-![](https://i-blog.csdnimg.cn/direct/0744e1d86eff4458a6ab28d44e13821f.png)
+![0744e1d86eff4458a6ab28d44e13821f.png](https://tu.2644536256.date/file/blog/wengzhang/1779545707075_0744e1d86eff4458a6ab28d44e13821f.png)
 
-![](https://i-blog.csdnimg.cn/direct/0b11e53c0e974313bb0eb5124ae54d9e.png)
+![0b11e53c0e974313bb0eb5124ae54d9e.png](https://tu.2644536256.date/file/blog/wengzhang/1779545718985_0b11e53c0e974313bb0eb5124ae54d9e.png)
 
 ### 小结
 
@@ -545,9 +594,8 @@ echo "n1=$1 n10=${10}"echo "all* :$*"echo "all@ :$@"for n in "$*"do echo $ndone 
 
 在 Shell 中，变量不需要显式地声明类型。变量的赋值格式为：
 
-```cobol
+```bash
 variable_name=value
-运行项目并下载源码
 ```
 
 +   赋值时，`=` 两边不能有空格。
@@ -558,7 +606,8 @@ variable_name=value
 例如：
 
 ```bash
-name="Alice"age=25运行项目并下载源码bash
+name="Alice"
+age=25
 ```
 
 ##### 2\. **引用变量**
@@ -566,13 +615,14 @@ name="Alice"age=25运行项目并下载源码bash
 要引用变量的值，需要在变量名前加上 `$`：
 
 ```bash
-echo "Name: $name"echo "Age: $age"运行项目并下载源码bash
+echo "Name: $name"
+echo "Age: $age"
 ```
 
 输出：
 
-```vbnet
-Name: AliceAge: 25运行项目并下载源码
+```bash
+Name: AliceAge: 25
 ```
 
 ##### 3\. **使用大括号引用变量**
@@ -581,39 +631,34 @@ Name: AliceAge: 25运行项目并下载源码
 
 ```bash
 echo "Name: ${name}123"
-运行项目并下载源码bash
 ```
 
 输出：
 
-```vbnet
+```bash
 Name: Alice123
-运行项目并下载源码
 ```
 
 ##### 4\. **只读变量**
 
 如果你想定义一个只读变量，可以使用 `readonly`：
 
-```csharp
+```bash
 readonly name="Alice"
-运行项目并下载源码
 ```
 
 尝试修改只读变量会报错：
 
-```csharp
+```bash
 name="Bob"  # 会报错
-运行项目并下载源码
 ```
 
 ##### 5\. **环境变量**
 
 你也可以通过 `export` 命令将变量导出为环境变量，这样其他进程也能访问这个变量。
 
-```typescript
+```bash
 export name="Alice"
-运行项目并下载源码
 ```
 
 * * *
@@ -625,20 +670,25 @@ export name="Alice"
 ##### 1\. **获取位置参数**
 
 ```bash
-#!/bin/bash# 获取位置参数echo "Script name: $0"echo "First argument: $1"echo "Second argument: $2"运行项目并下载源码bash
+#!/bin/bash
+# 获取位置参数
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
 ```
 
 假设你运行脚本时输入以下命令：
 
-```cobol
+```bash
 ./demo.sh Alice 25
-运行项目并下载源码
 ```
 
 输出：
 
-```cobol
-Script name: ./demo.shFirst argument: AliceSecond argument: 25运行项目并下载源码
+```bash
+Script name: ./demo.sh
+First argument: Alice
+Second argument: 25
 ```
 
 ##### 2\. **特殊参数**
@@ -648,7 +698,6 @@ Script name: ./demo.shFirst argument: AliceSecond argument: 25运行项目并下
 
 ```bash
 echo "Number of arguments: $#"
-运行项目并下载源码bash
 ```
 
 +   **`$*`** 和 **`$@`**：表示所有位置参数（字符串数组），两者的区别在于：
@@ -659,19 +708,27 @@ echo "Number of arguments: $#"
         
 
 ```bash
-echo "All arguments as a single string: $*"echo "All arguments as separate strings: $@"运行项目并下载源码bash
+echo "All arguments as a single string: $*"
+echo "All arguments as separate strings: $@"
 ```
 
 ##### 3\. **通过位置参数传递给函数**
 
 ```bash
-#!/bin/bashmy_function() {    echo "First argument: $1"    echo "Second argument: $2"} my_function "Alice" "Bob"运行项目并下载源码bash
+#!/bin/bash
+my_function() {    
+echo "First argument: $1"    
+echo "Second argument: $2"
+} 
+
+my_function "Alice" "Bob"
 ```
 
 输出：
 
-```sql
-First argument: AliceSecond argument: Bob运行项目并下载源码
+```bash
+First argument: Alice
+Second argument: Bob
 ```
 
 * * *
@@ -681,35 +738,33 @@ First argument: AliceSecond argument: Bob运行项目并下载源码
 在实际编程中，我们可能需要为某些参数设置默认值。可以使用 `${parameter:-default}` 来实现，如果参数为空或未设置，则使用默认值。
 
 ```bash
-#!/bin/bashname=${1:-"Guest"}  # 如果未传递第一个参数，则使用 "Guest" 作为默认值echo "Hello, $name!"运行项目并下载源码
+#!/bin/bash
+name=${1:-"Guest"}  # 如果未传递第一个参数，则使用 "Guest" 作为默认值
+echo "Hello, $name!"
 ```
 
 如果你执行以下命令：
 
 ```bash
 ./demo.sh Alice
-运行项目并下载源码
 ```
 
 输出：
 
-```undefined
+```bash
 Hello, Alice!
-运行项目并下载源码
 ```
 
 如果你执行时不传递参数：
 
 ```bash
 ./demo.sh
-运行项目并下载源码
 ```
 
 输出：
 
 ```undefined
 Hello, Guest!
-运行项目并下载源码
 ```
 
 * * *
@@ -722,14 +777,14 @@ Hello, Guest!
 你可以使用 `${#variable}` 获取变量内容的长度：
 
 ```bash
-str="Hello"echo "Length of string: ${#str}"运行项目并下载源码bash
+str="Hello"
+echo "Length of string: ${#str}"
 ```
 
 输出：
 
-```cobol
+```bash
 Length of string: 5
-运行项目并下载源码
 ```
 
 1.  **字符串替换**
@@ -739,28 +794,28 @@ Length of string: 5
     
 
 ```bash
-str="Hello World"echo "${str/World/Shell}"运行项目并下载源码bash
+str="Hello World"
+echo "${str/World/Shell}"
 ```
 
 输出：
 
-```undefined
+```bash
 Hello Shell
-运行项目并下载源码
 ```
 
 +   替换字符串中的所有匹配项：
     
 
 ```bash
-str="Hello World World"echo "${str//World/Shell}"运行项目并下载源码bash
+str="Hello World World"
+echo "${str//World/Shell}"
 ```
 
 输出：
 
 ```undefined
 Hello Shell Shell
-运行项目并下载源码
 ```
 
 1.  **子字符串提取**
@@ -769,14 +824,14 @@ Hello Shell Shell
 你可以通过 `${variable:start:length}` 来提取子字符串：
 
 ```bash
-str="Hello World"echo "${str:6:5}"运行项目并下载源码bash
+str="Hello World"
+echo "${str:6:5}"
 ```
 
 输出：
 
 ```undefined
 World
-运行项目并下载源码
 ```
 
 * * *
@@ -784,12 +839,47 @@ World
 #### 完整代码：
 
 ```bash
-#!/bin/bash  echo  name="Alice"age=25echo "Name: $name"echo "Age: $age"echo "Name: ${name}123"echo # 获取位置参数echo "Script name: $0"echo "First argument: $1"echo "Second argument: $2"echoecho "Number of arguments: $#"echoecho "All arguments as a single string: $*"echo "All arguments as separate strings: $@"echomy_function() {    echo "First argument: $1"    echo "Second argument: $2"}my_function "Alice" "Bob"echostr="Hello"echo "Length of string: ${#str}"echostr="Hello World"echo "${str/World/Shell}"echostr="Hello World World"echo "${str//World/Shell}"echostr="Hello World"echo "${str:6:5}"echo  运行项目并下载源码bash
+#!/bin/bash  
+echo  
+name="Alice"
+age=25
+echo "Name: $name"
+echo "Age: $age"
+echo "Name: ${name}123"
+echo 
+# 获取位置参数
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
+echo
+echo "Number of arguments: $#"
+echo
+echo "All arguments as a single string: $*"
+echo "All arguments as separate strings: $@"
+echo
+my_function() {    
+echo "First argument: $1"    
+echo "Second argument: $2"
+}
+my_function "Alice" "Bob"
+echo
+str="Hello"
+echo "Length of string: ${#str}"
+echo
+str="Hello World"
+echo "${str/World/Shell}"
+echo
+str="Hello World World"
+echo "${str//World/Shell}"
+echo
+str="Hello World"
+echo "${str:6:5}"
+echo
 ```
 
 运行结果：
 
-![](https://i-blog.csdnimg.cn/direct/4dcc86193146495ca39dad053906b72f.png)
+![4dcc86193146495ca39dad053906b72f.png](https://tu.2644536256.date/file/blog/wengzhang/1779546079717_4dcc86193146495ca39dad053906b72f.png)
 
 ####  总结
 
@@ -820,15 +910,20 @@ World
 `read` 命令用于从用户输入获取一行数据并将其赋值给指定的变量。
 
 ```bash
-#!/bin/bash# 读取用户输入read nameecho "Hello, $name!"运行项目并下载源码bash
+#!/bin/bash
+# 读取用户输入
+read name
+echo "Hello, $name!"
 ```
 
 运行脚本后，脚本会等待用户输入，输入完成后按回车，脚本会输出 `Hello, [用户输入的内容]`。
 
 例如：
 
-```crystal
-$ ./demo.shAliceHello, Alice!运行项目并下载源码
+```bash
+$ ./demo.sh
+Alice
+Hello, Alice!
 ```
 
 ### 2\. **读取多个变量**
@@ -836,13 +931,18 @@ $ ./demo.shAliceHello, Alice!运行项目并下载源码
 如果你想读取多个输入项，可以在 `read` 命令后列出多个变量，输入的内容会按照空格进行分割，依次赋给每个变量。
 
 ```bash
-#!/bin/bash# 读取多个变量read name ageecho "Name: $name, Age: $age"运行项目并下载源码bash
+#!/bin/bash
+# 读取多个变量
+read name age
+echo "Name: $name, Age: $age"
 ```
 
 执行脚本时，用户输入两个值并用空格隔开：
 
-```cobol
-$ ./demo.shAlice 25Name: Alice, Age: 25运行项目并下载源码
+```bash
+$ ./demo.sh
+Alice 25
+Name: Alice, Age: 25
 ```
 
 ### 3\. **提示信息**
@@ -850,13 +950,18 @@ $ ./demo.shAlice 25Name: Alice, Age: 25运行项目并下载源码
 你可以在使用 `read` 命令时，添加提示信息，提示用户输入的内容：
 
 ```bash
-#!/bin/bash# 添加提示信息read -p "Please enter your name: " nameecho "Hello, $name!"运行项目并下载源码bash
+#!/bin/bash
+# 添加提示信息
+read -p "Please enter your name: " name
+echo "Hello, $name!"
 ```
 
 这会在提示信息后等待用户输入：
 
-```crystal
-$ ./demo.shPlease enter your name: AliceHello, Alice!运行项目并下载源码
+```bash
+$ ./demo.sh
+Please enter your name: Alice
+Hello, Alice!
 ```
 
 ### 4\. **设置输入超时**
@@ -864,14 +969,19 @@ $ ./demo.shPlease enter your name: AliceHello, Alice!运行项目并下载源码
 可以通过 `-t` 选项来设置输入的超时时间，单位是秒。如果在指定时间内用户没有输入，`read` 命令会自动退出。
 
 ```bash
-#!/bin/bash# 设置 5 秒的输入超时read -t 5 -p "Please enter your name: " nameif [ -z "$name" ]; then    echo "You took too long to respond!"else    echo "Hello, $name!"fi运行项目并下载源码bash
+#!/bin/bash
+# 设置 5 秒的输入超时
+read -t 5 -p "Please enter your name: " name
+if [ -z "$name" ]; then    
+	echo "You took too long to respond!"
+else    
+	echo "Hello, $name!"fi
 ```
 
 如果超时未输入，输出：
 
 ```vbnet
 You took too long to respond!
-运行项目并下载源码
 ```
 
 ### 5\. **隐藏输入内容**
@@ -879,7 +989,11 @@ You took too long to respond!
 有时你可能需要用户输入密码或其他敏感信息，此时可以使用 `-s` 选项来隐藏输入内容。
 
 ```bash
-#!/bin/bash# 隐藏输入内容（如密码）read -sp "Enter your password: " passwordechoecho "Password entered."运行项目并下载源码bash
+#!/bin/bash
+# 隐藏输入内容（如密码）
+read -sp "Enter your password: " password
+echoe
+cho "Password entered."
 ```
 
 此时输入的内容会被隐藏，不会显示在屏幕上。
@@ -889,7 +1003,11 @@ You took too long to respond!
 `-n` 选项可以让 `read` 命令只读取用户输入的一个字符：
 
 ```bash
-#!/bin/bash# 只读取一个字符read -n 1 -p "Do you want to continue (y/n)? " choiceechoecho "You chose: $choice"运行项目并下载源码bash
+#!/bin/bash
+# 只读取一个字符
+read -n 1 -p "Do you want to continue (y/n)? " choice
+echo
+echo "You chose: $choice"
 ```
 
 在这种情况下，用户只需要输入一个字符（例如 `y` 或 `n`），然后按回车，脚本就会继续执行。
@@ -899,41 +1017,98 @@ You took too long to respond!
 默认情况下，`read` 命令会将用户输入的内容按空格分割成多个部分。如果你希望使用其他字符作为分隔符，可以使用 `IFS`（内部字段分隔符）变量。
 
 ```bash
-#!/bin/bash# 改变分隔符为逗号IFS=',' read -p "Enter name,age: " name ageecho "Name: $name, Age: $age"运行项目并下载源码bash
+#!/bin/bash
+# 改变分隔符为逗号
+IFS=',' read -p "Enter name,age: " name age
+echo "Name: $name, Age: $age"
 ```
 
 执行时，用户输入内容需要用逗号分隔：
 
 ```cobol
-$ ./demo.shEnter name,age: Alice,25Name: Alice, Age: 25运行项目并下载源码
+$ ./demo.sh
+Enter name,age: Alice,25
+Name: Alice, Age: 25
 ```
 
 #### 示例：读取用户信息并进行判断
 
 ```bash
-#!/bin/bash# 读取用户输入的姓名和年龄read -p "Enter your name: " nameread -p "Enter your age: " age # 判断年龄if [ "$age" -ge 18 ]; then    echo "$name, you are an adult."else    echo "$name, you are a minor."fi运行项目并下载源码bash
+#!/bin/bash
+# 读取用户输入的姓名和年龄
+read -p "Enter your name: " name
+read -p "Enter your age: " age 
+# 判断年龄
+if [ "$age" -ge 18 ]; then
+    echo "$name, you are an adult."
+    else
+        echo "$name, you are a minor."
+fi
 ```
 
 如果输入：
 
-```delphi
-Enter your name: AliceEnter your age: 20运行项目并下载源码
+```bash
+Enter your name: Alice
+Enter your age: 20
 ```
 
 输出：
 
-```sql
+```bash
 Alice, you are an adult.
-运行项目并下载源码
 ```
 
 完整代码：
 
 ```bash
-#!/bin/bash# 读取用户输入read nameecho "Hello, $name!"echo# 读取多个变量read name ageecho "Name: $name, Age: $age"echo# 添加提示信息read -p "Please enter your name: " nameecho "Hello, $name!"echo# 设置 5 秒的输入超时read -t 5 -p "Please enter your name: " nameif [ -z "$name" ]; then    echo "You took too long to respond!"else    echo "Hello, $name!"fiecho# 隐藏输入内容（如密码）read -sp "Enter your password: " passwordechoecho "Password entered."echo# 只读取一个字符read -n 1 -p "Do you want to continue (y/n)? " choiceechoecho "You chose: $choice"# 改变分隔符为逗号IFS=',' read -p "Enter name,age: " name ageecho "Name: $name, Age: $age"echo# 读取用户输入的姓名和年龄read -p "Enter your name: " nameread -p "Enter your age: " ageecho# 判断年龄if [ "$age" -ge 18 ]; then    echo "$name, you are an adult."else    echo "$name, you are a minor."fi运行项目并下载源码bash
+#!/bin/bash
+# 读取用户输入
+read name
+echo "Hello, $name!"
+echo
+# 读取多个变量
+read name age
+echo "Name: $name, Age: $age"
+echo
+# 添加提示信息
+read -p "Please enter your name: " name
+echo "Hello, $name!"
+echo
+# 设置 5 秒的输入超时
+read -t 5 -p "Please enter your name: " name
+if [ -z "$name" ]; then
+    echo "You took too long to respond!"
+    else
+        echo "Hello, $name!"
+fi
+echo
+# 隐藏输入内容（如密码）
+read -sp "Enter your password: " password
+echo
+echo "Password entered."
+echo
+# 只读取一个字符
+read -n 1 -p "Do you want to continue (y/n)? " choice
+echo
+echo "You chose: $choice"
+# 改变分隔符为逗号
+IFS=',' read -p "Enter name,age: " name age
+echo "Name: $name, Age: $age"
+echo
+# 读取用户输入的姓名和年龄
+read -p "Enter your name: " name
+read -p "Enter your age: " agee
+cho# 判断年龄
+if [ "$age" -ge 18 ]; then
+    echo "$name, you are an adult."
+    else    
+    echo "$name, you are a minor."
+fi
 ```
 
-运行结果：![](https://i-blog.csdnimg.cn/direct/e05e42c77f3d4c239fc01e574c02086d.png)
+运行结果：
+![e05e42c77f3d4c239fc01e574c02086d.png](https://tu.2644536256.date/file/blog/wengzhang/1779546454433_e05e42c77f3d4c239fc01e574c02086d.png)
 
 #### 总结
 
@@ -959,66 +1134,81 @@ Alice, you are an adult.
 ##### 1\. **加法**
 
 ```bash
-#!/bin/basha=10b=20sum=$(expr $a + $b)echo "Sum: $sum"运行项目并下载源码bash
+#!/bin/bash
+a=10
+b=20
+sum=$(expr $a + $b)
+echo "Sum: $sum"
 ```
 
 输出：
 
 ```cobol
 Sum: 30
-运行项目并下载源码
 ```
 
 ##### 2\. **减法**
 
 ```bash
-#!/bin/basha=30b=10diff=$(expr $a - $b)echo "Difference: $diff"运行项目并下载源码bash
+#!/bin/bash
+a=30
+b=10
+diff=$(expr $a - $b)
+echo "Difference: $diff"
 ```
 
 输出：
 
 ```vbnet
 Difference: 20
-运行项目并下载源码
 ```
 
 ##### 3\. **乘法**
 
 ```bash
-#!/bin/basha=5b=6prod=$(expr $a \* $b)   # 注意乘法符号需要加反斜杠echo "Product: $prod"运行项目并下载源码bash
+#!/bin/bash
+a=5
+b=6
+prod=$(expr $a \* $b)   # 注意乘法符号需要加反斜杠
+echo "Product: $prod"
 ```
 
 输出：
 
 ```vbnet
 Product: 30
-运行项目并下载源码
 ```
 
 ##### 4\. **除法**
 
 ```bash
-#!/bin/basha=30b=5quotient=$(expr $a / $b)echo "Quotient: $quotient"运行项目并下载源码bash
+#!/bin/bash
+a=30
+b=5
+quotient=$(expr $a / $b)
+echo "Quotient: $quotient"
 ```
 
 输出：
 
 ```vbnet
 Quotient: 6
-运行项目并下载源码
 ```
 
 ##### 5\. **取余**
 
 ```bash
-#!/bin/basha=10b=3remainder=$(expr $a % $b)echo "Remainder: $remainder"运行项目并下载源码bash
+#!/bin/bash
+a=10
+b=3
+remainder=$(expr $a % $b)
+echo "Remainder: $remainder"
 ```
 
 输出：
 
 ```cobol
 Remainder: 1
-运行项目并下载源码
 ```
 
 ### 2、 使用 `$(( ))` 进行算术运算
@@ -1028,66 +1218,78 @@ Remainder: 1
 ##### 1\. **加法**
 
 ```bash
-#!/bin/basha=10b=20sum=$((a + b))echo "Sum: $sum"运行项目并下载源码bash
+#!/bin/bash
+a=10
+b=20sum=$((a + b))
+echo "Sum: $sum"
 ```
 
 输出：
 
 ```cobol
 Sum: 30
-运行项目并下载源码
 ```
 
 ##### 2\. **减法**
 
 ```bash
-#!/bin/basha=30b=10diff=$((a - b))echo "Difference: $diff"运行项目并下载源码bash
+#!/bin/bash
+a=30
+b=10
+diff=$((a - b))
+echo "Difference: $diff"
 ```
 
 输出：
 
 ```vbnet
 Difference: 20
-运行项目并下载源码
 ```
 
 ##### 3\. **乘法**
 
 ```bash
-#!/bin/basha=5b=6prod=$((a * b))   # 乘法时不需要反斜杠echo "Product: $prod"运行项目并下载源码bash
+#!/bin/bash
+a=5
+b=6prod=$((a * b))   # 乘法时不需要反斜杠
+echo "Product: $prod"
 ```
 
 输出：
 
 ```vbnet
 Product: 30
-运行项目并下载源码
 ```
 
 ##### 4\. **除法**
 
 ```bash
-#!/bin/basha=30b=5quotient=$((a / b))echo "Quotient: $quotient"运行项目并下载源码bash
+#!/bin/bash
+a=30
+b=5quotient=$((a / b))
+echo "Quotient: $quotient"
 ```
 
 输出：
 
 ```vbnet
 Quotient: 6
-运行项目并下载源码
 ```
 
 ##### 5\. **取余**
 
 ```bash
-#!/bin/basha=10b=3remainder=$((a % b))echo "Remainder: $remainder"运行项目并下载源码bash
+#!/bin/bash
+a=10
+b=3
+remainder=$((a % b))
+echo "Remainder: $remainder"
 ```
 
 输出：
 
 ```cobol
 Remainder: 1
-运行项目并下载源码
 ```
 
 ### 3、使用 `let` 进行算术运算
@@ -1097,66 +1299,81 @@ Remainder: 1
 ##### 1\. **加法**
 
 ```bash
-#!/bin/basha=10b=20let sum=a+becho "Sum: $sum"运行项目并下载源码bash
+#!/bin/bash
+a=10
+b=20
+let sum=a+be
+cho "Sum: $sum"
 ```
 
 输出：
 
 ```cobol
 Sum: 30
-运行项目并下载源码
 ```
 
 ##### 2\. **减法**
 
 ```bash
-#!/bin/basha=30b=10let diff=a-becho "Difference: $diff"运行项目并下载源码bash
+#!/bin/bash
+a=30
+b=10
+let diff=a-b
+echo "Difference: $diff"
 ```
 
 输出：
 
 ```vbnet
 Difference: 20
-运行项目并下载源码
 ```
 
 ##### 3\. **乘法**
 
 ```bash
-#!/bin/basha=5b=6let prod=a*becho "Product: $prod"运行项目并下载源码bash
+#!/bin/bash
+a=5
+b=6
+let prod=a*b
+echo "Product: $prod"
 ```
 
 输出：
 
 ```vbnet
 Product: 30
-运行项目并下载源码
 ```
 
 ##### 4\. **除法**
 
 ```bash
-#!/bin/basha=30b=5let quotient=a/becho "Quotient: $quotient"运行项目并下载源码bash
+#!/bin/bash
+a=30
+b=5
+let quotient=a/b
+echo "Quotient: $quotient"
 ```
 
 输出：
 
 ```vbnet
 Quotient: 6
-运行项目并下载源码
 ```
 
 ##### 5\. **取余**
 
 ```bash
-#!/bin/basha=10b=3let remainder=a%becho "Remainder: $remainder"运行项目并下载源码bash
+#!/bin/bash
+a=10
+b=3
+let remainder=a%b
+echo "Remainder: $remainder"
 ```
 
 输出：
 
 ```cobol
 Remainder: 1
-运行项目并下载源码
 ```
 
 ### 4 、自增和自减
@@ -1166,38 +1383,127 @@ Shell 还支持对变量进行自增和自减操作，使用 `++` 和 `--` 操�
 ##### 1\. **自增**
 
 ```bash
-#!/bin/basha=5((a++))echo "After increment: $a"运行项目并下载源码bash
+#!/bin/bash
+a=5
+((a++))
+echo "After increment: $a"
 ```
 
 输出：
 
 ```cobol
 After increment: 6
-运行项目并下载源码
 ```
 
 ##### 2\. **自减**
 
 ```bash
-#!/bin/basha=5((a--))echo "After decrement: $a"运行项目并下载源码bash
+#!/bin/bash
+a=5
+((a--))
+echo "After decrement: $a"
 ```
 
 输出：
 
 ```cobol
 After decrement: 4
-运行项目并下载源码
 ```
 
 ### 完整代码：
 
 ```bash
-#!/bin/basha=10b=20sum=$(expr $a + $b)echo "Sum: $sum"echoa=30b=10diff=$(expr $a - $b)echo "Difference: $diff"echoa=5b=6prod=$(expr $a \* $b)   # 注意乘法符号需要加反斜杠echo "Product: $prod"echoa=30b=5quotient=$(expr $a / $b)echo "Quotient: $quotient"echoa=10b=3remainder=$(expr $a % $b)echo "Remainder: $remainder"echoa=10b=20sum=$((a + b))echo "Sum: $sum"echoa=30b=10diff=$((a - b))echo "Difference: $diff"echoa=5b=6prod=$((a * b))   # 乘法时不需要反斜杠echo "Product: $prod"echoa=30b=5quotient=$((a / b))echo "Quotient: $quotient"echoa=10b=3remainder=$((a % b))echo "Remainder: $remainder"echoa=10b=20let sum=a+becho "Sum: $sum"echoa=30b=10let diff=a-becho "Difference: $diff"echoa=5b=6let prod=a*becho "Product: $prod"echoa=30b=5let quotient=a/becho "Quotient: $quotient"a=10b=3let remainder=a%becho "Remainder: $remainder"echoa=5((a++))echo "After increment: $a"echoa=5((a--))echo "After decrement: $a"echo运行项目并下载源码bash
+#!/bin/bash
+a=10
+b=20
+sum=$(expr $a + $b)
+echo "Sum: $sum"
+echo
+a=30
+b=10
+diff=$(expr $a - $b)
+echo "Difference: $diff"
+echo
+a=5
+b=6
+prod=$(expr $a \* $b)   # 注意乘法符号需要加反斜杠
+echo "Product: $prod"
+echo
+a=30
+b=5
+quotient=$(expr $a / $b)
+echo "Quotient: $quotient"
+echo
+a=10
+b=3
+remainder=$(expr $a % $b)
+echo "Remainder: $remainder"
+echo
+a=10
+b=20
+sum=$((a + b))
+echo "Sum: $sum"
+echo
+a=30
+b=10
+diff=$((a - b))
+echo "Difference: $diff"
+echo
+a=5
+b=6
+prod=$((a * b))   # 乘法时不需要反斜杠
+echo "Product: $prod"
+echo
+a=30
+b=5
+quotient=$((a / b))
+echo "Quotient: $quotient"
+echo
+a=10
+b=3
+remainder=$((a % b))
+echo "Remainder: $remainder"
+echo
+a=10
+b=20
+let sum=a+b
+echo "Sum: $sum"
+echo
+a=30
+b=10
+let diff=a-b
+echo "Difference: $diff"
+echo
+a=5
+b=6
+let prod=a*b
+echo "Product: $prod"
+echo
+a=30
+b=5
+let quotient=a/b
+echo "Quotient: $quotient"
+a=10
+b=3
+let remainder=a%b
+echo "Remainder: $remainder"
+echo
+a=5
+((a++))
+echo "After increment: $a"
+echo
+a=5
+((a--))
+echo "After decrement: $a"
+echo
+运行项目并下载源码
+bash
+
 ```
 
 运行结果：
 
-![](https://i-blog.csdnimg.cn/direct/43cff62bd6124ceba4ee7e9690306197.png)
+![43cff62bd6124ceba4ee7e9690306197.png](https://tu.2644536256.date/file/blog/wengzhang/1779546854514_43cff62bd6124ceba4ee7e9690306197.png)
 
 ### 5、小结
 
@@ -1222,40 +1528,57 @@ After decrement: 4
 
 ##### 基本语法
 
-```php
+```bash
 echo "表达式" | bc
-运行项目并下载源码
 ```
 
-![](https://i-blog.csdnimg.cn/direct/a517db67287e4a73b8fe7182494b729d.png)
+![a517db67287e4a73b8fe7182494b729d.png](https://tu.2644536256.date/file/blog/wengzhang/1779546880634_a517db67287e4a73b8fe7182494b729d.png)
 
 例如：
 
-```php
-echo "3 + 5" | bc         # 输出 8echo "scale=2; 3.5 / 2" | bc  # 输出 1.75，保留两位小数运行项目并下载源码
+```bash
+echo "3 + 5" | bc         # 输出 8
+echo "scale=2; 3.5 / 2" | bc  # 输出 1.75，保留两位小数运行项目并下载源码
 ```
 
 #####  示例：基本运算
 
 ```bash
-#!/bin/bash a=3.5b=1.2 sum=$(echo "$a + $b" | bc)echo "sum = $sum" sub=$(echo "$a - $b" | bc)echo "sub = $sub" mul=$(echo "$a * $b" | bc)echo "mul = $mul" div=$(echo "scale=3; $a / $b" | bc)echo "div = $div"运行项目并下载源码
+#!/bin/bash
+ 
+a=3.5
+b=1.2
+ 
+sum=$(echo "$a + $b" | bc)
+echo "sum = $sum"
+ 
+sub=$(echo "$a - $b" | bc)
+echo "sub = $sub"
+ 
+mul=$(echo "$a * $b" | bc)
+echo "mul = $mul"
+ 
+div=$(echo "scale=3; $a / $b" | bc)
+echo "div = $div"
 ```
 
 输出：
 
-```cobol
-sum = 4.7sub = 2.3mul = 4.2div = 2.916运行项目并下载源码
+```bash
+sum = 4.7
+sub = 2.3
+mul = 4.2
+div = 2.916
 ```
 
-##### ![](https://i-blog.csdnimg.cn/direct/4ac555e8af3a47ab802e61404f38d2a4.png)
+![4ac555e8af3a47ab802e61404f38d2a4.png](https://tu.2644536256.date/file/blog/wengzhang/1779546961194_4ac555e8af3a47ab802e61404f38d2a4.png)
 
 #####  scale 的含义
 
 `scale` 用来设置小数点后保留的位数：
 
-```php
+```bash
 echo "scale=3; 10 / 3" | bc   # 输出 3.333
-运行项目并下载源码
 ```
 
 如果不设置 `scale`，默认结果为整数部分。
@@ -1280,7 +1603,8 @@ echo "scale=3; 10 / 3" | bc   # 输出 3.333
 示例：
 
 ```php
-echo "scale=2; 5 / 3" | bc       # 输出：1.66echo "scale=5; 1.234 / 3" | bc   # 输出：0.41133运行项目并下载源码
+echo "scale=2; 5 / 3" | bc       # 输出：1.66
+echo "scale=5; 1.234 / 3" | bc   # 输出：0.41133
 ```
 
 `scale` 默认值为 `0`，所以如果不设置，`bc` 默认只输出整数部分！
@@ -1298,18 +1622,16 @@ echo "scale=2; 5 / 3" | bc       # 输出：1.66echo "scale=5; 1.234 / 3" | bc  
 
 示例：十六进制转十进制
 
-```php
+```bash
 echo "ibase=16; A + 1" | bc   # 输出：11（即十进制）
-运行项目并下载源码
 ```
 
 注意：**`ibase` 要在 `obase` 之前设置！** 因为设置 `ibase` 后，后面所有数值都会以该进制解析。
 
 示例：进制转换（十进制转二进制）
 
-```php
+```bash
 echo "obase=2; 10" | bc      # 输出：1010（二进制）
-运行项目并下载源码
 ```
 
 * * *
@@ -1323,9 +1645,8 @@ echo "obase=2; 10" | bc      # 输出：1010（二进制）
 
 示例：将十进制 100 转换为十六进制
 
-```php
+```bash
 echo "obase=16; 100" | bc    # 输出：64
-运行项目并下载源码
 ```
 
 * * *
@@ -1343,7 +1664,6 @@ echo "obase=16; 100" | bc    # 输出：64
 
 ```bash
 echo "ibase=16; obase=10; A" | bc    # 错误：obase 会被当成十六进制解释
-运行项目并下载源码bash
 ```
 
 正确示例：
@@ -1370,23 +1690,27 @@ echo "obase=10; ibase=16; A" | bc    # 输出 10运行项目并下载源码bash
 
 加上 `-l` 参数可以引入 `math` 库，支持 `sine`, `cosine`, `sqrt()` 等函数：
 
-```php
-echo "scale=4; s(1.0)" | bc -l      # 计算 sin(1.0)echo "scale=4; sqrt(2)" | bc -l     # 平方根运行项目并下载源码
+```bash
+echo "scale=4; s(1.0)" | bc -l      # 计算 sin(1.0)
+echo "scale=4; sqrt(2)" | bc -l     # 平方根
 ```
 
 ##### 多表达式计算
 
 可以一次性执行多条命令：
 
-```php
+```bash
 echo "a=5; b=3; a*b + a/b" | bc -l
-运行项目并下载源码
 ```
 
 #####  交互模式（命令行里直接打 `bc`）
 
-```cobol
-$ bcscale=23.14 * 26.28quit运行项目并下载源码
+```bash
+$ bc
+scale=2
+3.14 * 2
+6.28
+quit
 ```
 
 #### 总结对比
@@ -1411,8 +1735,18 @@ Shell 脚本中的条件判断和流程控制用于根据不同的条件执行�
 
 `if` 语句是用来根据条件是否成立来决定是否执行某个代码块。它的基本语法结构如下：
 
-```cobol
-if conditionthen    command1    command2    ...elif condition2then    command3else    command4fi运行项目并下载源码
+```bash
+if condition
+then
+    command1
+    command2    
+    ...
+elif condition2
+then
+    command3
+else
+    command4
+fi
 ```
 
 +   `if`：用来测试一个条件表达式，若条件为真（0），则执行 `then` 后面的代码块。
@@ -1425,27 +1759,43 @@ if conditionthen    command1    command2    ...elif condition2then    command3el
 ###### 1\. **基本用法**
 
 ```bash
-#!/bin/basha=10if [ $a -gt 5 ]then    echo "$a is greater than 5"else    echo "$a is not greater than 5"fi运行项目并下载源码
+#!/bin/bash
+a=10
+if [ $a -gt 5 ]
+then
+    echo "$a is greater than 5"
+else
+    echo "$a is not greater than 5"
+fi
 ```
 
 输出：
 
-```cobol
+```bash
 10 is greater than 5
-运行项目并下载源码
 ```
 
 ##### 2\. **多个条件判断**
 
 ```bash
-#!/bin/basha=10b=20if [ $a -gt $b ]then    echo "$a is greater than $b"elif [ $a -eq $b ]then    echo "$a is equal to $b"else    echo "$a is less than $b"fi运行项目并下载源码
+#!/bin/bash
+a=10
+b=20
+if [ $a -gt $b ]
+then
+    echo "$a is greater than $b"
+elif [ $a -eq $b ]
+then
+    echo "$a is equal to $b"
+else
+    echo "$a is less than $b"
+
 ```
 
 输出：
 
-```cobol
+```bash
 10 is less than 20
-运行项目并下载源码
 ```
 
 ##### 条件判断符号
@@ -1467,34 +1817,62 @@ if conditionthen    command1    command2    ...elif condition2then    command3el
 +   `-n`：字符串非空
     
 
-![](https://i-blog.csdnimg.cn/direct/bb9376a9b8c54899b12606b677868769.png)
+![bb9376a9b8c54899b12606b677868769.png](https://tu.2644536256.date/file/blog/wengzhang/1779547179833_bb9376a9b8c54899b12606b677868769.png)
 
-![](https://i-blog.csdnimg.cn/direct/cdaca6957c7d49eeb99ee059d7ca63cb.png)
+![cdaca6957c7d49eeb99ee059d7ca63cb.png](https://tu.2644536256.date/file/blog/wengzhang/1779547192158_cdaca6957c7d49eeb99ee059d7ca63cb.png)
 
 ### `2、test` 和 `[ ]` 语法
 
 在 Shell 中，`test` 和 `[` 都用于判断条件，它们的功能相同，可以互换使用。
 
 ```bash
-#!/bin/basha=10if test $a -gt 5then    echo "$a is greater than 5"fi运行项目并下载源码
+#!/bin/bash
+a=10
+if test $a -gt 5
+then
+    echo "$a is greater than 5"
+fi
 ```
 
 或者
 
 ```bash
-#!/bin/basha=10if [ $a -gt 5 ]then    echo "$a is greater than 5"fi运行项目并下载源码
+#!/bin/bash
+a=10
+if [ $a -gt 5 ]
+then
+    echo "$a is greater than 5"
+fi
 ```
 
-### ![](https://i-blog.csdnimg.cn/direct/8a75cc00490445d4ac13f2d9598f2459.png)
+![8a75cc00490445d4ac13f2d9598f2459.png](https://tu.2644536256.date/file/blog/wengzhang/1779547269255_8a75cc00490445d4ac13f2d9598f2459.png)
 
-![](https://i-blog.csdnimg.cn/direct/9cc39b6627cb4cf1b5fb2237a1ccae87.png)
+![9cc39b6627cb4cf1b5fb2237a1ccae87.png](https://tu.2644536256.date/file/blog/wengzhang/1779547305533_9cc39b6627cb4cf1b5fb2237a1ccae87.png)
 
 ### 3、 `case` 结构
 
 `case` 语句用于多重条件判断，类似于其他编程语言中的 `switch` 语句。它根据变量的值匹配不同的模式并执行相应的代码块。
 
 ```bash
-#!/bin/bashecho "Enter a number between 1 and 3"read num case $num in    1)        echo "You chose number 1"        ;;    2)        echo "You chose number 2"        ;;    3)        echo "You chose number 3"        ;;    *)        echo "Invalid number"        ;;esac运行项目并下载源码
+
+#!/bin/bash
+echo "Enter a number between 1 and 3"
+read num
+ 
+case $num in
+    1)
+        echo "You chose number 1"
+        ;;
+    2)
+        echo "You chose number 2"
+        ;;
+    3)
+        echo "You chose number 3"
+        ;;
+    *)
+        echo "Invalid number"
+        ;;
+esac
 ```
 
 **解释：**
@@ -1517,7 +1895,14 @@ if conditionthen    command1    command2    ...elif condition2then    command3el
 当多个条件都满足时，使用 `&&` 来连接。例如，`command1 && command2` 表示当 `command1` 执行成功时，才执行 `command2`。
 
 ```bash
-#!/bin/basha=10b=5if [ $a -gt $b ] && [ $b -gt 0 ]then    echo "$a is greater than $b and $b is positive"fi运行项目并下载源码
+
+#!/bin/bash
+a=10
+b=5
+if [ $a -gt $b ] && [ $b -gt 0 ]
+then
+    echo "$a is greater than $b and $b is positive"
+fi
 ```
 
 ##### 2\. **OR（或）运算符 `||`**
@@ -1525,7 +1910,13 @@ if conditionthen    command1    command2    ...elif condition2then    command3el
 当至少一个条件满足时，使用 `||` 来连接。例如，`command1 || command2` 表示当 `command1` 执行失败时，才执行 `command2`。
 
 ```bash
-#!/bin/basha=10b=15if [ $a -gt $b ] || [ $b -gt 0 ]then    echo "At least one condition is true"fi运行项目并下载源码
+#!/bin/bash
+a=10
+b=15
+if [ $a -gt $b ] || [ $b -gt 0 ]
+then
+    echo "At least one condition is true"
+fi
 ```
 
 ##### 3\. **非运算符 `!`**
@@ -1533,18 +1924,89 @@ if conditionthen    command1    command2    ...elif condition2then    command3el
 用来否定一个条件的判断。
 
 ```bash
-#!/bin/basha=10if ! [ $a -lt 5 ]then    echo "$a is not less than 5"fi运行项目并下载源码
+#!/bin/bash
+a=10
+if ! [ $a -lt 5 ]
+then
+    echo "$a is not less than 5"
+fi
 ```
 
 完整代码：
 
 ```bash
-#!/bin/basha=10if [ $a -gt 5 ]then    echo "$a is greater than 5"else    echo "$a is not greater than 5"fiecho#!/bin/basha=10b=20if [ $a -gt $b ]then    echo "$a is greater than $b"elif [ $a -eq $b ]then    echo "$a is equal to $b"else    echo "$a is less than $b"fiechoa=10if test $a -gt 5then    echo "$a is greater than 5"fiechoecho "Enter a number between 1 and 3"read num case $num in    1)        echo "You chose number 1"        ;;    2)        echo "You chose number 2"        ;;    3)        echo "You chose number 3"        ;;    *)        echo "Invalid number"        ;;esaca=10b=5if [ $a -gt $b ] && [ $b -gt 0 ]then    echo "$a is greater than $b and $b is positive"fiechoa=10b=15if [ $a -gt $b ] || [ $b -gt 0 ]then    echo "At least one condition is true"fiechoa=10if ! [ $a -lt 5 ]then    echo "$a is not less than 5"fiecho  运行项目并下载源码bash
+
+#!/bin/bash
+a=10
+if [ $a -gt 5 ]
+then
+    echo "$a is greater than 5"
+else
+    echo "$a is not greater than 5"
+fi
+echo
+#!/bin/bash
+a=10
+b=20
+if [ $a -gt $b ]
+then
+    echo "$a is greater than $b"
+elif [ $a -eq $b ]
+then
+    echo "$a is equal to $b"
+else
+    echo "$a is less than $b"
+fi
+echo
+a=10
+if test $a -gt 5
+then
+    echo "$a is greater than 5"
+fi
+echo
+echo "Enter a number between 1 and 3"
+read num
+ 
+case $num in
+    1)
+        echo "You chose number 1"
+        ;;
+    2)
+        echo "You chose number 2"
+        ;;
+    3)
+        echo "You chose number 3"
+        ;;
+    *)
+        echo "Invalid number"
+        ;;
+esac
+a=10
+b=5
+if [ $a -gt $b ] && [ $b -gt 0 ]
+then
+    echo "$a is greater than $b and $b is positive"
+fi
+echo
+a=10
+b=15
+if [ $a -gt $b ] || [ $b -gt 0 ]
+then
+    echo "At least one condition is true"
+fi
+echo
+a=10
+if ! [ $a -lt 5 ]
+then
+    echo "$a is not less than 5"
+fi
+echo
+
 ```
 
 运行结果： 
 
-![](https://i-blog.csdnimg.cn/direct/ff969507c06b42599ff46fb788d3e918.png)
+![ff969507c06b42599ff46fb788d3e918.png](https://tu.2644536256.date/file/blog/wengzhang/1779547361459_ff969507c06b42599ff46fb788d3e918.png)
 
 ## 九、循环结构
 
@@ -1559,13 +2021,22 @@ if conditionthen    command1    command2    ...elif condition2then    command3el
 ###### 1\. **遍历列表**
 
 ```bash
-#!/bin/bash# 使用for遍历一个列表for i in 1 2 3 4 5do    echo "Iteration: $i"done运行项目并下载源码bash
+#!/bin/bash
+# 使用for遍历一个列表
+for i in 1 2 3 4 5
+do
+    echo "Iteration: $i"
+done
 ```
 
 输出：
 
 ```vbnet
-Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下载源码
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+Iteration: 5
 ```
 
 ###### 2\. **遍历文件夹中的文件**
@@ -1573,7 +2044,11 @@ Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下�
 你还可以使用 `for` 循环遍历文件夹中的文件：
 
 ```bash
-#!/bin/bashfor file in /path/to/directory/*do    echo "File: $file"done运行项目并下载源码bash
+#!/bin/bash
+for file in /path/to/directory/*
+do
+    echo "File: $file"
+done
 ```
 
 ###### 3\. **基于计数的循环**
@@ -1581,25 +2056,41 @@ Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下�
 如果你知道循环的次数，可以使用 `for` 循环进行计数：
 
 ```bash
-#!/bin/bashfor i in {1..5}do    echo "Iteration: $i"done运行项目并下载源码
+#!/bin/bash
+for i in {1..5}
+do
+    echo "Iteration: $i"
+done
 ```
 
 输出：
 
 ```vbnet
-Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下载源码
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+Iteration: 5
 ```
 
 你还可以使用 `for` 进行更灵活的计数，例如步长控制：
 
 ```bash
-#!/bin/bashfor i in {1..10..2}do    echo "Iteration: $i"done运行项目并下载源码bash
+#!/bin/bash
+for i in {1..10..2}
+do
+    echo "Iteration: $i"
+done
 ```
 
 输出：
 
-```vbnet
-Iteration: 1Iteration: 3Iteration: 5Iteration: 7Iteration: 9运行项目并下载源码
+```bash
+Iteration: 1
+Iteration: 3
+Iteration: 5
+Iteration: 7
+Iteration: 9
 ```
 
 ### `2、while` 循环
@@ -1609,13 +2100,24 @@ Iteration: 1Iteration: 3Iteration: 5Iteration: 7Iteration: 9运行项目并下�
 ###### 1\. **基本用法**
 
 ```bash
-#!/bin/bash# 使用while循环，循环直到条件为假i=1while [ $i -le 5 ]do    echo "Iteration: $i"    ((i++))  # 递增done运行项目并下载源码bash
+#!/bin/bash
+# 使用while循环，循环直到条件为假
+i=1
+while [ $i -le 5 ]
+do
+    echo "Iteration: $i"
+    ((i++))  # 递增
+done
 ```
 
 输出：
 
 ```vbnet
-Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下载源码
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+Iteration: 5
 ```
 
 ###### 2\. **使用 `read` 控制 `while` 循环**
@@ -1623,7 +2125,18 @@ Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下�
 你还可以使用 `read` 来控制 `while` 循环，直到用户输入特定的值时才停止循环：
 
 ```bash
-#!/bin/bash# 使用while循环直到用户输入 'quit'while truedo    read -p "Enter a command (type 'quit' to exit): " command    if [ "$command" == "quit" ]    then        echo "Exiting..."        break    fi    echo "You entered: $command"done运行项目并下载源码bash
+#!/bin/bash
+# 使用while循环直到用户输入 'quit'
+while true
+do
+    read -p "Enter a command (type 'quit' to exit): " command
+    if [ "$command" == "quit" ]
+    then
+        echo "Exiting..."
+        break
+    fi
+    echo "You entered: $command"
+done
 ```
 
 ### 3、 `until` 循环
@@ -1633,13 +2146,24 @@ Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下�
 ###### 1\. **基本用法**
 
 ```bash
-#!/bin/bash# 使用until循环，直到条件为真时才停止i=1until [ $i -gt 5 ]do    echo "Iteration: $i"    ((i++))  # 递增done运行项目并下载源码bash
+#!/bin/bash
+# 使用until循环，直到条件为真时才停止
+i=1
+until [ $i -gt 5 ]
+do
+    echo "Iteration: $i"
+    ((i++))  # 递增
+done
 ```
 
 输出：
 
-```vbnet
-Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下载源码
+```bash
+Iteration: 1
+Iteration: 2
+Iteration: 3
+Iteration: 4
+Iteration: 5
 ```
 
 与 `while` 循环的不同之处在于，`until` 循环当条件为 **假** 时执行，当条件变为 **真** 时退出。
@@ -1653,13 +2177,25 @@ Iteration: 1Iteration: 2Iteration: 3Iteration: 4Iteration: 5运行项目并下�
 `break` 用于退出循环结构（无论条件是否成立），它会立即终止当前的循环。
 
 ```bash
-#!/bin/bash# 使用break提前退出循环for i in 1 2 3 4 5do    if [ $i -eq 3 ]    then        echo "Breaking the loop at i=$i"        break    fi    echo "Iteration: $i"done运行项目并下载源码bash
+#!/bin/bash
+# 使用break提前退出循环
+for i in 1 2 3 4 5
+do
+    if [ $i -eq 3 ]
+    then
+        echo "Breaking the loop at i=$i"
+        break
+    fi
+    echo "Iteration: $i"
+done
 ```
 
 输出：
 
-```cobol
-Iteration: 1Iteration: 2Breaking the loop at i=3运行项目并下载源码
+```bash
+Iteration: 1
+Iteration: 2
+Breaking the loop at i=3
 ```
 
 ##### 2\. **`continue` 语句**
@@ -1667,13 +2203,27 @@ Iteration: 1Iteration: 2Breaking the loop at i=3运行项目并下载源码
 `continue` 用于跳过当前循环中的其余部分，并立即开始下一次循环迭代。
 
 ```bash
-#!/bin/bash# 使用continue跳过当前迭代for i in 1 2 3 4 5do    if [ $i -eq 3 ]    then        echo "Skipping the loop at i=$i"        continue    fi    echo "Iteration: $i"done运行项目并下载源码bash
+#!/bin/bash
+# 使用continue跳过当前迭代
+for i in 1 2 3 4 5
+do
+    if [ $i -eq 3 ]
+    then
+        echo "Skipping the loop at i=$i"
+        continue
+    fi
+    echo "Iteration: $i"
+done
 ```
 
 输出：
 
 ```cobol
-Iteration: 1Iteration: 2Skipping the loop at i=3Iteration: 4Iteration: 5运行项目并下载源码
+Iteration: 1
+Iteration: 2
+Skipping the loop at i=3
+Iteration: 4
+Iteration: 5
 ```
 
 在上面的例子中，`continue` 会跳过数字 3 的输出，继续进行后续的迭代。
@@ -1693,14 +2243,73 @@ Iteration: 1Iteration: 2Skipping the loop at i=3Iteration: 4Iteration: 5运行�
 完整代码：
 
 ```bash
-#!/bin/bash# 使用for遍历一个列表for i in 1 2 3 4 5do    echo "Iteration: $i"doneechofor i in {1..10..2}do    echo "Iteration: $i"doneecho# 使用while循环，循环直到条件为假i=1while [ $i -le 5 ]do    echo "Iteration: $i"    ((i++))  # 递增doneecho# 使用while循环直到用户输入 'quit'while truedo    read -p "Enter a command (type 'quit' to exit): " command    if [ "$command" == "quit" ]    then        echo "Exiting..."        break    fi    echo "You entered: $command"doneecho# 使用until循环，直到条件为真时才停止i=1until [ $i -gt 5 ]do    echo "Iteration: $i"    ((i++))  # 递增doneecho# 使用break提前退出循环for i in 1 2 3 4 5do    if [ $i -eq 3 ]    then        echo "Breaking the loop at i=$i"        break    fi    echo "Iteration: $i"doneecho# 使用continue跳过当前迭代for i in 1 2 3 4 5do    if [ $i -eq 3 ]    then        echo "Skipping the loop at i=$i"        continue    fi    echo "Iteration: $i"done   运行项目并下载源码bash
+#!/bin/bash
+# 使用for遍历一个列表
+for i in 1 2 3 4 5
+do
+    echo "Iteration: $i"
+done
+echo
+for i in {1..10..2}
+do
+    echo "Iteration: $i"
+done
+echo
+# 使用while循环，循环直到条件为假
+i=1
+while [ $i -le 5 ]
+do
+    echo "Iteration: $i"
+    ((i++))  # 递增
+done
+echo
+# 使用while循环直到用户输入 'quit'
+while true
+do
+    read -p "Enter a command (type 'quit' to exit): " command
+    if [ "$command" == "quit" ]
+    then
+        echo "Exiting..."
+        break
+    fi
+    echo "You entered: $command"
+done
+echo
+# 使用until循环，直到条件为真时才停止
+i=1
+until [ $i -gt 5 ]
+do
+    echo "Iteration: $i"
+    ((i++))  # 递增
+done
+echo
+# 使用break提前退出循环
+for i in 1 2 3 4 5
+do
+    if [ $i -eq 3 ]
+    then
+        echo "Breaking the loop at i=$i"
+        break
+    fi
+    echo "Iteration: $i"
+done
+echo
+# 使用continue跳过当前迭代
+for i in 1 2 3 4 5
+do
+    if [ $i -eq 3 ]
+    then
+        echo "Skipping the loop at i=$i"
+        continue
+    fi
+    echo "Iteration: $i"
+done
+
 ```
 
 运行结果：
 
- ![](https://i-blog.csdnimg.cn/direct/1d7838fe2dc347aa8e5c16d3fc62c686.png)
-
-## 
+ ![1d7838fe2dc347aa8e5c16d3fc62c686.png](https://tu.2644536256.date/file/blog/wengzhang/1779547560695_1d7838fe2dc347aa8e5c16d3fc62c686.png)
 
 ## 十、函数定义与调用
 
@@ -1710,8 +2319,16 @@ Iteration: 1Iteration: 2Skipping the loop at i=3Iteration: 4Iteration: 5运行�
 
 Shell 中函数的定义有两种常见写法：
 
-```php
-# 写法一（推荐）function_name() {    命令序列} # 写法二（等价）function function_name {    命令序列}运行项目并下载源码
+```bash
+# 写法一（推荐）
+function_name() {
+    命令序列
+}
+ 
+# 写法二（等价）
+function function_name {
+    命令序列
+}
 ```
 
 ### 2、函数的调用
@@ -1719,14 +2336,18 @@ Shell 中函数的定义有两种常见写法：
 定义好函数后，只需要使用函数名就可以调用该函数：
 
 ```bash
-hello() {    echo "Hello, Shell!"} # 调用函数hello运行项目并下载源码bash
+hello() {
+    echo "Hello, Shell!"
+}
+ 
+# 调用函数
+hello
 ```
 
 输出：
 
 ```undefined
 Hello, Shell!
-运行项目并下载源码
 ```
 
 ###  3、带参数的函数
@@ -1734,13 +2355,23 @@ Hello, Shell!
 Shell 函数可以像脚本一样接收参数，通过 `$1`, `$2`... 表示第 1、第 2 个参数，`$#` 表示参数个数，`$*` 表示所有参数。
 
 ```bash
-sum() {    echo "第一个参数: $1"    echo "第二个参数: $2"    echo "参数个数: $#"    echo "所有参数: $*"} sum 10 20运行项目并下载源码bash
+sum() {
+    echo "第一个参数: $1"
+    echo "第二个参数: $2"
+    echo "参数个数: $#"
+    echo "所有参数: $*"
+}
+
+sum 10 20
 ```
 
 输出：
 
-```cobol
-第一个参数: 10第二个参数: 20参数个数: 2所有参数: 10 20运行项目并下载源码
+```bash
+第一个参数: 10
+第二个参数: 20
+参数个数: 2
+所有参数: 10 20
 ```
 
 ### 4、函数的返回值
@@ -1748,14 +2379,20 @@ sum() {    echo "第一个参数: $1"    echo "第二个参数: $2"    echo "参
 Shell 函数默认的返回值是函数中最后一条命令的返回码（0 表示成功）。你也可以用 `return` 指定返回 0~255 的整数值，并通过 `$?` 获取。
 
 ```bash
-add() {    return $(($1 + $2))} add 3 4result=$?echo "结果是: $result"运行项目并下载源码bash
+
+add() {
+    return $(($1 + $2))
+}
+ 
+add 3 4
+result=$?
+echo "结果是: $result"
 ```
 
 输出：
 
 ```cobol
 结果是: 7
-运行项目并下载源码
 ```
 
 > ⚠️ 注意：`return` 只能返回整数值，如果你想返回字符串或其他复杂结果，可以通过全局变量或命令替换返回。
@@ -1763,14 +2400,19 @@ add() {    return $(($1 + $2))} add 3 4result=$?echo "结果是: $result"运行�
 ### 5、函数返回字符串的方法（使用命令替换）
 
 ```bash
-greet() {    local name=$1    echo "Hi, $name!"} msg=$(greet "Tom")echo "$msg"运行项目并下载源码bash
+greet() {
+    local name=$1
+    echo "Hi, $name!"
+}
+ 
+msg=$(greet "Tom")
+echo "$msg"
 ```
 
 输出：
 
-```undefined
+```bash
 Hi, Tom!
-运行项目并下载源码
 ```
 
 ### 6、函数作用域
@@ -1778,18 +2420,67 @@ Hi, Tom!
 Shell 中变量默认是全局的。为了避免变量冲突，可以使用 `local` 定义局部变量（只能在函数内部使用）。
 
 ```bash
-demo() {    local msg="局部变量"    echo "$msg"} demo# echo $msg  # 报错，变量已出作用域运行项目并下载源码bash
+demo() {
+    local msg="局部变量"
+    echo "$msg"
+}
+ 
+demo
+# echo $msg  # 报错，变量已出作用域
 ```
 
 完整代码：
 
 ```bash
-#!/bin/bashhello() {    echo "Hello, Shell!"} # 调用函数helloechosum() {    echo "第一个参数: $1"    echo "第二个参数: $2"    echo "参数个数: $#"    echo "所有参数: $*"} sum 10 20echoadd() {    return $(($1 + $2))} add 3 4result=$?echo "结果是: $result"echogreet() {    local name=$1    echo "Hi, $name!"} msg=$(greet "Tom")echo "$msg"echodemo() {    local msg="局部变量"    echo "$msg"} demo# echo $msg  # 报错，变量已出作用域echo   运行项目并下载源码bash
+#!/bin/bash
+hello() {
+    echo "Hello, Shell!"
+}
+ 
+# 调用函数
+hello
+echo
+sum() {
+    echo "第一个参数: $1"
+    echo "第二个参数: $2"
+    echo "参数个数: $#"
+    echo "所有参数: $*"
+}
+ 
+sum 10 20
+echo
+add() {
+    return $(($1 + $2))
+}
+ 
+add 3 4
+result=$?
+echo "结果是: $result"
+echo
+greet() {
+    local name=$1
+    echo "Hi, $name!"
+}
+ 
+msg=$(greet "Tom")
+echo "$msg"
+echo
+demo() {
+    local msg="局部变量"
+    echo "$msg"
+}
+ 
+demo
+# echo $msg  # 报错，变量已出作用域
+echo
+ 
+ 
+ 
 ```
 
 运行结果：
 
- ![](https://i-blog.csdnimg.cn/direct/2600acaff967455db1e9d2b134c70ed2.png)
+![2600acaff967455db1e9d2b134c70ed2.png](https://tu.2644536256.date/file/blog/wengzhang/1779547684202_2600acaff967455db1e9d2b134c70ed2.png)
 
 ### 7、小结
 
@@ -1813,27 +2504,27 @@ demo() {    local msg="局部变量"    echo "$msg"} demo# echo $msg  # 报错�
 
 ```undefined
 crontab -e
-运行项目并下载源码
 ```
 
 添加如下行（表示开机启动执行脚本）：
 
 ```cobol
 @reboot /bin/bash /home/pi/myjob/pi5/start_yolo.sh
-运行项目并下载源码
 ```
 
 然后你可以编写 `start_yolo.sh` 脚本如下：
 
 ```bash
-#!/bin/bash# 开机运行 YOLO 脚本cd ~/myjob/pi5/python3 yolo.py > yolo.log 2>&1 &运行项目并下载源码
+#!/bin/bash
+# 开机运行 YOLO 脚本
+cd ~/myjob/pi5/
+python3 yolo.py > yolo.log 2>&1 &
 ```
 
 别忘了给这个脚本添加执行权限：
 
 ```cobol
 chmod +x ~/myjob/pi5/start_yolo.sh
-运行项目并下载源码
 ```
 
 * * *
@@ -1841,12 +2532,89 @@ chmod +x ~/myjob/pi5/start_yolo.sh
 #### 综合 Shell 脚本示例：`demo_all.sh`
 
 ```bash
-#!/bin/bash# Shell 综合示例脚本 # 注释使用:<<!这是多行注释学习 Shell 真开心！! # 输出与变量echo "欢迎使用 Shell 脚本教程"name="Shell达人"echo "你好，$name" # 函数定义与返回值sum() {    local a=$1    local b=$2    echo "函数参数：a=$a, b=$b"    return $((a + b))}sum 3 5result=$?echo "sum 函数的返回值是 $result" # 用户输入read -p "请输入你的年龄：" ageecho "你的年龄是 $age" # 算术运算x=10y=3echo "$x + $y = $((x + y))"echo "$x * $y = `expr $x \* $y`" # 条件判断if [[ $age -ge 18 ]]; then    echo "成年人"else    echo "未成年人"fi # case 语句read -p "请输入星期数字 (1-7)：" daycase $day in1) echo "星期一" ;;2) echo "星期二" ;;3) echo "星期三" ;;*) echo "其他" ;;esac # for 循环echo "打印 1 到 5 的数字："for i in {1..5}; do    echo "$i"done # while 循环count=0while [[ $count -lt 3 ]]; do    echo "count=$count"    ((count++))done # 变量类型与作用域declare -i score=90declare -r school="Shell大学"echo "score=$score, school=$school" # 特殊变量echo "本脚本名称：$0"echo "第一个参数：$1"echo "所有参数：$*"echo "参数个数：$#" # 结束语echo "脚本执行完毕，感谢阅读！"exit 0运行项目并下载源码bash
+#!/bin/bash
+# Shell 综合示例脚本
+ 
+# 注释使用
+:<<!
+这是多行注释
+学习 Shell 真开心！
+!
+ 
+# 输出与变量
+echo "欢迎使用 Shell 脚本教程"
+name="Shell达人"
+echo "你好，$name"
+ 
+# 函数定义与返回值
+sum() {
+    local a=$1
+    local b=$2
+    echo "函数参数：a=$a, b=$b"
+    return $((a + b))
+}
+sum 3 5
+result=$?
+echo "sum 函数的返回值是 $result"
+ 
+# 用户输入
+read -p "请输入你的年龄：" age
+echo "你的年龄是 $age"
+ 
+# 算术运算
+x=10
+y=3
+echo "$x + $y = $((x + y))"
+echo "$x * $y = `expr $x \* $y`"
+ 
+# 条件判断
+if [[ $age -ge 18 ]]; then
+    echo "成年人"
+else
+    echo "未成年人"
+fi
+ 
+# case 语句
+read -p "请输入星期数字 (1-7)：" day
+case $day in
+1) echo "星期一" ;;
+2) echo "星期二" ;;
+3) echo "星期三" ;;
+*) echo "其他" ;;
+esac
+ 
+# for 循环
+echo "打印 1 到 5 的数字："
+for i in {1..5}; do
+    echo "$i"
+done
+ 
+# while 循环
+count=0
+while [[ $count -lt 3 ]]; do
+    echo "count=$count"
+    ((count++))
+done
+ 
+# 变量类型与作用域
+declare -i score=90
+declare -r school="Shell大学"
+echo "score=$score, school=$school"
+ 
+# 特殊变量
+echo "本脚本名称：$0"
+echo "第一个参数：$1"
+echo "所有参数：$*"
+echo "参数个数：$#"
+ 
+# 结束语
+echo "脚本执行完毕，感谢阅读！"
+exit 0
 ```
 
 >  可使用 `chmod +x demo_all.sh && ./demo_all.sh` 来运行这个脚本
 
-![](https://i-blog.csdnimg.cn/direct/62bc9cf352b04edc877b3dbcf00d0e9e.png)
+![62bc9cf352b04edc877b3dbcf00d0e9e.png](https://tu.2644536256.date/file/blog/wengzhang/1779547709766_62bc9cf352b04edc877b3dbcf00d0e9e.png)
 
 * * *
 
