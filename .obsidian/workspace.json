@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/posts/shell基础运用.md",
+                "file": "src/content/posts/docker入门.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "shell基础运用"
+              "title": "docker入门"
             }
           }
         ]
@@ -196,8 +196,9 @@
   },
   "active": "8cb848cc565176c8",
   "lastOpenFiles": [
-    "src/content/posts/shell基础运用1.md",
     "src/content/posts/shell基础运用.md",
+    "src/content/posts/docker入门.md",
+    "src/content/posts/shell基础运用1.md",
     "src/content/posts/Linux快速入门及运维基础（后续慢慢补充）.md",
     "src/content/posts/zabbix简易搭建.md",
     "src/content/posts/linux部分shell脚本.md",
@@ -233,7 +234,6 @@
     "src/content/posts/markdown-mermaid.md",
     "src/content/posts/markdown-extended.md",
     "src/content/posts/katex-math-example.md",
-    "src/content/posts/firefly-layout-system.md",
-    "src/content/posts/firefly.md"
+    "src/content/posts/firefly-layout-system.md"
   ]
 }
