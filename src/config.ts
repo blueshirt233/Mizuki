@@ -131,10 +131,10 @@ export const siteConfig: SiteConfig = {
 				"https://tu.2644536256.date/file/奶绿/1778925757380_4c7571e4ff46b9435e0685a538508aa9109143705.png",
 			], // 桌面横幅图片
 			mobile: [
-				"https://tu.2644536256.date/file/奶绿/1778925769980_4e3b9be34839507cad1a902d46d504464264059.png",
-				"https://tu.2644536256.date/file/奶绿/1778925760093_d007df30fb9728f5bda646b9d927018d109143705.png",
-				"https://tu.2644536256.date/file/奶绿/1778925764577_c68d1c0d033a6b48d1e81b35c44b0e2d109143705.png",
-				"https://tu.2644536256.date/file/奶绿/1778925757380_4c7571e4ff46b9435e0685a538508aa9109143705.png",
+				"https://tu.2644536256.date/file/奶绿/1778922200942_Image_1778725922702.png",
+				"https://tu.2644536256.date/file/奶绿/1778922209730_35cd75f8d095a10ea2ad595617e120ec.jpeg",
+				"https://tu.2644536256.date/file/奶绿/1778922214110_a90e6a5787157fb735dd9b3e125c53e9.jpeg",
+				"https://tu.2644536256.date/file/奶绿/1779111252768_727A046735315991BFA83E89D2E88D88.jpg",
 			], // 移动横幅图片
 		}, // 使用本地横幅图片
 
@@ -247,10 +247,10 @@ export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
 			"https://tu.2644536256.date/file/奶绿/1778925757380_4c7571e4ff46b9435e0685a538508aa9109143705.png",
 		], // 桌面横幅图片
 		mobile: [
-			"https://tu.2644536256.date/file/奶绿/1778925769980_4e3b9be34839507cad1a902d46d504464264059.png",
-			"https://tu.2644536256.date/file/奶绿/1778925760093_d007df30fb9728f5bda646b9d927018d109143705.png",
-			"https://tu.2644536256.date/file/奶绿/1778925764577_c68d1c0d033a6b48d1e81b35c44b0e2d109143705.png",
-			"https://tu.2644536256.date/file/奶绿/1778925757380_4c7571e4ff46b9435e0685a538508aa9109143705.png",
+			"https://tu.2644536256.date/file/奶绿/1778922200942_Image_1778725922702.png",
+			"https://tu.2644536256.date/file/奶绿/1778922209730_35cd75f8d095a10ea2ad595617e120ec.jpeg",
+			"https://tu.2644536256.date/file/奶绿/1778922214110_a90e6a5787157fb735dd9b3e125c53e9.jpeg",
+			"https://tu.2644536256.date/file/奶绿/1779111252768_727A046735315991BFA83E89D2E88D88.jpg",
 		], // 移动横幅图片
 	}, // 使用本地横幅图片
 	position: "center", // 壁纸位置，等同于 object-position
@@ -446,7 +446,7 @@ export const commentConfig: CommentConfig = {
 	enable: true, // 启用评论功能。当设置为 false 时，评论组件将不会显示在文章区域。
 	system: "twikoo", // 评论系统选择: "twikoo" | "giscus"
 	twikoo: {
-		envId: "https://twikoo.vercel.app",
+		envId: "twikoo-indol-phi.vercel.app",
 		lang: SITE_LANG,
 	},
 	giscus: {
