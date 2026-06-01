@@ -1057,19 +1057,20 @@ while n < 10:
 可见`continue`的作用是提前结束本轮循环，并直接开始下一轮循环。
 
 # 猜数字作业
+## 第一种写法
 ```python
-import random  
+import random #导入random库，生成随机数的
   
   
 def my_func():  
-    sjs = random.randint(1, 100)  
+    sjs = random.randint(1, 100)  #生成[1-100]的数字，randint这个方法是特例，生成数字是全包，如果是random.randrange就是左闭右开
     print(sjs)  
-    while True:  
+    while True:  #这个是无限循环的写法，只要循环中没有false就一直循环
         guess = int(input("请输入数字"))  
         if guess == sjs:  
             print("你猜对了")  
-            again = error1()  
-            if again:  
+            again = error1()  #把error1函数放进来运行
+            if again:  #这里就直接简写如果是true就运行my_func函数，不是就直接break
                 my_func()  
             break  
         elif guess < sjs:  
@@ -1079,9 +1080,9 @@ def my_func():
             print("你猜大了")  
             continue  
   
-def error1():  
-    n = input("进入下一局吗，请输入y或者n")  
-    if n == "y":  
+def error1():  #写一个error函数
+    n = input("进入下一局吗，请输入y或者n").strip().lower() #链式调用 .strip()去掉所有空格 .lower()大写转小写
+    if n == "y":  #这里返回true和false，不直接操作步骤
         return True  
     elif n == "n":  
         return False  
@@ -1094,3 +1095,144 @@ def error1():
 if __name__ == '__main__':  
     my_func()
 ```
+## 第二种写法
+```python
+import random
+
+def play_game():
+    secret = random.randint(1, 100)
+    while True:
+        try:
+            guess = int(input("请输入数字（1-100）："))
+        except ValueError:
+            print("无效输入，请输入整数")
+            continue
+        if guess == secret:
+            print("你猜对了！")
+            break
+        elif guess < secret:
+            print("猜小了")
+        else:
+            print("猜大了")
+            
+            
+def ask_play_again():
+    while True:
+        choice = input("进入下一局吗？请输入 y 或 n：").strip().lower()
+        if choice == "y":
+            return True
+        if choice == "n":
+            return False
+        print("输入错误，请重新输入")
+        
+        
+if __name__ == '__main__':
+    while True:
+        play_game()
+        if not ask_play_again():
+            break
+```
+# 随机ping测试
+## 第一版
+```python
+import random  #导入random库，生成随机数的
+import subprocess  #python执行外部命令的一种方式
+  
+ip_list=[]  #创建三个列表做存储
+reach_count=[]  
+unreach_count=[]  
+for x in range(3):  #这个是生成循环三次的意思range（3）实际上生成【0、1、2】
+    n=random.randint(100,105)  #生成【100-105】其中的整数
+    ip=f'192.168.1.{n}'  #这个是格式化字符串‘’里面是内容{}里面放变量，这样字符串和变量能放在一起，但是这个是str格式的
+    print(ip)  
+    ip_list.append(ip)  #存入到ip_list
+    r=subprocess.run(['ping','-c','1','-w','1000',str(ip)],stdout=subprocess.PIPE,check=False)  #如果是linux里运行用-c1，-W1  subprocess.run方法就是执行命令并等待完成-c 1 指的是发送一个数据包 -w 1 指的是等待响应超时时间为1秒 windows中是1000是一秒，两个系统单位不同，stdout=subprocess.PIPE捕获命令不输出，check=False不检查命令是否成功
+    print(r.returncode)  #打印返回码0是成功，1是失败
+    if int(r.returncode)==0:  #通过返回码来判断是否成功
+        print(ip + "网络通")  
+        print("")  
+        print("="*30)  
+        reach_count.append(ip)  
+    else:  
+        print(ip + "不通")  
+        print("")  
+        print("="*30)  
+        print("")  
+        unreach_count.append(ip)  
+  
+print("="*50 + "检查结果" + "="*50)  #“=”*50就是写50个=
+print(f"检测IP个数：{len(ip_list)}")  #ip_list的个数
+print("="*50 + "正常ip" + "="*50)  
+print(f"正常的ip为：\n{reach_count}\n一共是{len(reach_count)}个")  
+print("="*50 + "错误ip" + "="*50)  
+print(f'不正常的ip为：\n{unreach_count}\n一共是{len(unreach_count)}个')
+```
+
+## 第二版
+```python
+import random
+import subprocess
+import platform #导入平台检测模块，用于识别操作系统
+
+
+def ping_ip(ip):
+    """ping 一个 IP，返回是否可达"""
+    # 根据操作系统选择参数
+    if platform.system().lower() == "windows":#识别是什么系统
+        params = ['ping', '-n', '1', '-w', '3000', ip]
+    else:  # Linux/Mac
+        params = ['ping', '-c', '1', '-w', '3', ip]
+    
+    try:
+        r = subprocess.run(params, stdout=subprocess.PIPE, 
+                          stderr=subprocess.PIPE, check=False)
+        return r.returncode == 0
+    except Exception as e:
+        print(f"执行出错: {e}")
+        return False
+        
+        
+# 主程序
+ip_list = []
+reachable = []
+unreachable = []
+
+# 生成 3 个不重复的随机 IP
+ips = set()
+while len(ips) < 3:
+    ips.add(random.randint(100, 105))
+ips = list(ips)
+for n in ips:
+    ip = f'192.168.1.{n}'
+    print(f"正在测试: {ip}")
+    ip_list.append(ip)
+    
+    if ping_ip(ip):#这里直接调用ping_ip的函数直接判断返回值
+        print(f"{ip} 网络通")
+        reachable.append(ip)
+    else:
+        print(f"{ip} 不通")
+        unreachable.append(ip)
+    
+    print("=" * 30)
+    
+    
+# 输出结果
+print(f"\n{'='*20} 检查结果 {'='*20}")
+print(f"检测IP个数：{len(ip_list)}")
+print(f"正常的IP：{reachable} (共 {len(reachable)} 个)")
+print(f"异常的IP：{unreachable} (共 {len(unreachable)} 个)")
+```
+### subprocess.run 方法总结
+|参数|作用|示例|
+|---|---|---|
+|`args`|命令和参数列表|`['ls', '-l']` 或 `"ls -l"`|
+|`stdout`|标准输出处理|`subprocess.PIPE`（捕获）、`None`（打印）|
+|`stderr`|错误输出处理|同 `stdout`|
+|`check`|是否检查返回码|`True`（非0抛异常）、`False`（不检查）|
+|`timeout`|超时时间（秒）|`timeout=5`|
+|`shell`|是否通过 shell 执行|`shell=True`（安全风险，谨慎使用）|
+
+
+
+

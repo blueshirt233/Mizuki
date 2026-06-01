@@ -4,11 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "9b859348f21f2b48",
+        "id": "e30d3a599208d6ea",
         "type": "tabs",
         "children": [
           {
-            "id": "7dade197cac725f5",
+            "id": "68f8a88865d52849",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/posts/python的自动化运维（一、基础）.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "python的自动化运维（一、基础）"
+            }
+          }
+        ]
+      },
+      {
+        "id": "7bf69102860b0ae5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bb90d85de1a3a65e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -180,7 +200,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,10 +214,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7dade197cac725f5",
+  "active": "68f8a88865d52849",
   "lastOpenFiles": [
     "src/content/posts/shell基础运用.md",
     "src/content/posts/python的自动化运维（一、基础）.md",
+    "未命名 1.base",
+    "未命名.base",
+    "src/content/posts/nfs服务器基本搭建.md",
     "src/content/posts/ollama本地部署ai记录.md",
     "src/config.ts~",
     "src/content/posts/docker入门.md",
@@ -212,7 +235,6 @@
     "src/content/posts/video.md",
     "src/content/posts/酒馆搭建.md",
     "src/content/posts/draft.md",
-    "src/content/posts/nfs服务器基本搭建.md",
     "public/images/albums/Milkygreen/info.json",
     "public/images/albums/Milkygreen",
     "public/images/albums/milkygreen/info.json",
@@ -223,9 +245,7 @@
     "attachments/backup/0e70878a83c849409e4e5aba8629c804.png",
     "attachments/backup/4087c115fbb94cbdb015d8a09bc6a8f6.png",
     "attachments/backup",
-    "attachments",
     "2026-05-18.md",
-    "未命名.base",
     "src/config/README.md",
     "public/pio/README.md",
     "src/content/posts/guide/cover.avif",
@@ -234,7 +254,6 @@
     "src/content/spec/guestbook.md",
     "src/content/posts/markdown-tutorial.md",
     "src/content/posts/markdown-plantuml.md",
-    "src/content/posts/markdown-mermaid.md",
-    "src/content/posts/markdown-extended.md"
+    "src/content/posts/markdown-mermaid.md"
   ]
 }
