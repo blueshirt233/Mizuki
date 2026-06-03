@@ -1,8 +1,8 @@
 ---
-title: python的自动化运维（一、基础）
+title: python的自动化运维（一、基础、变量、数组、分支循环）
 published: 2026-05-24
 pinned: false
-description: python的自动化运维（一、基础）
+description: python的自动化运维（一、基础、变量、数组、分支循环）
 tags:
   - python
 draft: false
