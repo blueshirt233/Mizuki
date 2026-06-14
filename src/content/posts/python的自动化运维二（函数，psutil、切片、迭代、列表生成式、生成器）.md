@@ -1,8 +1,8 @@
 ---
-title: python的自动化运维（二、函数，psutil模块、切片、迭代、列表生成式）
+title: python的自动化运维（二、函数，psutil、切片、迭代、列表生成式、生成器、模块）
 published: 2026-06-03
 pinned: false
-description: python的自动化运维（二、函数，psutil模块、切片、迭代、列表生成式）
+description: python的自动化运维（二、函数，psutil、切片、迭代、列表生成式、生成器、模块）
 tags:
   - python
 draft: false
