@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/content/posts/python的自动化运维五（异常处理，调试方式）.md",
+                "file": "src/content/posts/python的自动化运维五（异常处理，调试方式、断言、logging）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "python的自动化运维五（异常处理，调试方式）"
+              "title": "python的自动化运维五（异常处理，调试方式、断言、logging）"
             }
           }
         ]
@@ -197,7 +197,7 @@
   "active": "68f8a88865d52849",
   "lastOpenFiles": [
     "src/content/posts/python的自动化运维三（模块、time模块、自定义模块、包、冒泡排序）.md",
-    "src/content/posts/python的自动化运维五（异常处理，调试方式）.md",
+    "src/content/posts/python的自动化运维五（异常处理，调试方式、断言、logging）.md",
     "src/content/posts/guide/未命名.md",
     "src/content/posts/python的自动化运维四面向对象（类和实例，继承和多态、type()模块、isinstance()模块、实例属性和类属性）.md",
     "src/content/posts/python的自动化运维二（函数，psutil、切片、迭代、列表生成式、生成器）.md",
