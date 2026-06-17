@@ -273,7 +273,7 @@ export const navBarConfig: NavBarConfig = {
 			url: "/links/",
 			icon: "material-symbols:link",
 			children: [
-		/*		{
+			/*	{
 					name: "GitHub",
 					url: "https://github.com/LyraVoid/Mizuki",
 					external: true,
@@ -293,7 +293,7 @@ export const navBarConfig: NavBarConfig = {
 				},*/
 				{
 					name: "我的图床",
-					url: "https://tu.2644536256.date/",
+					url: "https://tu.2644536256.date",
 					external: true,
 					icon: "material-symbols:image",
 				},
@@ -643,7 +643,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 };
 
 export const sakuraConfig: SakuraConfig = {
-	enable: true, // 默认关闭樱花特效
+	enable: false, // 默认关闭樱花特效
 	sakuraNum: 21, // 樱花数量
 	limitTimes: -1, // 樱花越界限制次数，-1为无限循环
 	size: {
