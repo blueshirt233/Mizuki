@@ -268,12 +268,12 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		// 支持自定义导航栏链接，支持多级菜单
-	/*	{
-			name: "Links",
+		{
+			name: "我的链接",
 			url: "/links/",
 			icon: "material-symbols:link",
 			children: [
-				{
+		/*		{
 					name: "GitHub",
 					url: "https://github.com/LyraVoid/Mizuki",
 					external: true,
@@ -290,9 +290,15 @@ export const navBarConfig: NavBarConfig = {
 					url: "https://gitee.com/matsuzakayuki/Mizuki",
 					external: true,
 					icon: "mdi:git",
+				},*/
+				{
+					name: "我的图床",
+					url: "https://tu.2644536256.date/",
+					external: true,
+					icon: "material-symbols:image",
 				},
 			],
-		},*/
+		},
 		{
 			name: "My",
 			url: "/content/",
@@ -483,7 +489,7 @@ export const announcementConfig: AnnouncementConfig = {
 
 export const musicPlayerConfig: MusicPlayerConfig = {
 	enable: true, // 启用音乐播放器功能
-	showFloatingPlayer: false, // 显示悬浮播放器 UI
+	showFloatingPlayer: true, // 显示悬浮播放器 UI
 	floatingEntryMode: "fab", // 悬浮入口模式："default" 为独立悬浮播放器，"fab" 为集成到通用 FAB 组
 	mode: "meting", // 音乐播放器模式，可选 "local" 或 "meting"
 	meting_api:
@@ -602,7 +608,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 	// 侧栏组件布局配置
 	components: {
 		left: ["profile", "announcement", "tags", "card-toc"],
-		right: ["site-stats", "calendar", "categories", "music-sidebar"],
+		right: ["site-stats", "calendar", "categories"],
 		drawer: [
 			"profile",
 			"announcement",
@@ -637,7 +643,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 };
 
 export const sakuraConfig: SakuraConfig = {
-	enable: false, // 默认关闭樱花特效
+	enable: true, // 默认关闭樱花特效
 	sakuraNum: 21, // 樱花数量
 	limitTimes: -1, // 樱花越界限制次数，-1为无限循环
 	size: {
